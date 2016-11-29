@@ -1,0 +1,72 @@
+
+a {
+  transition: all .1s ease-in;
+  color: $navy;
+}
+
+@mixin btn {
+  @include font-size(18px);
+  transition: all .1s ease-in;
+  display: inline-block;
+  padding: 12px 24px 8px;
+  background: none;
+  border-style: solid;
+  border-width: 2px;
+  font-weight: $weight-medium;
+}
+
+.btn,
+.button {
+  @include btn;
+}
+
+.btn__navy {
+  border-color: $navy;
+
+  &:hover {
+    background: $navy;
+    color: #fff;
+  }
+}
+
+.btn__salmon {
+  border-color: $salmon;
+  color: $salmon;
+
+  &:hover {
+    background: $salmon;
+    color: $navy;
+  }
+}
+
+.btn__white {
+  border-color: #fff;
+  color: #fff;
+
+  &:hover {
+    background: #fff;
+    color: $navy;
+  }
+}
+
+.btn__grey {
+  border-color: $grey;
+  color: $grey;
+
+  &:hover {
+    background: $grey;
+    color: $navy;
+  }
+}
+
+
+input[type="submit"],
+input[type="button"],
+button {
+  @include global-transition(.1s);
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

@@ -1,0 +1,21 @@
+
+.pager {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.pager-item:not(:last-child) {
+	margin-right: 20px;
+}
+
+.pager-item__current {
+	color: $salmon;
+}
+
+.pager-icon {
+	width: 11px;
+	height: 11px;
+	stroke: $navy;
+	vertical-align: 0;
+}

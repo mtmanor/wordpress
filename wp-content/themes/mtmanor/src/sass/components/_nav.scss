@@ -1,0 +1,139 @@
+
+.main-nav {
+  @include bp-min-width($large) {
+    @include vertical-center;
+    left: 0;
+  }
+}
+
+.main-nav ul {
+  display: flex;
+
+  @include bp-max-width($large) {
+    display: none;
+  }
+}
+
+.main-nav ul.js-is-visible {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: $navy;
+}
+
+.main-nav li:not(:last-child) {
+  @include bp-max-width($large) {
+    margin-bottom: $base;
+  }
+
+  @include bp-min-width($large) {
+    margin-right: 30px;
+  }
+}
+
+.main-nav li a {
+  @include font-size(24px);
+  display: block;
+  color: #fff;
+  font-weight: $weight-medium;
+
+  @include bp-min-width($large) {
+    @include font-size(18px);
+  }
+}
+
+.hamburger {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  z-index: 10;
+
+  @include bp-max-width($large) {
+    @include vertical-center;
+    left: 20px;
+  }
+
+  @include bp-min-width($large) {
+    display: none;
+  }
+}
+
+.hamburger--bar {
+  position: relative;
+}
+
+.hamburger--bar,
+.hamburger--bar:before,
+.hamburger--bar:after {
+  @include global-transition(0.1s);
+  display: block;
+  width: 30px;
+  height: 1px;
+  background: #fff;
+}
+
+.hamburger--bar:before,
+.hamburger--bar:after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.hamburger--bar:before {
+  transform: rotate(0);
+  top: -10px;
+}
+
+.hamburger--bar:after {
+  transform: rotate(0);
+  bottom: -10px;
+}
+
+.hamburger--bar {
+  opacity: 1;
+}
+
+.js-is-active .hamburger--bar {
+  position: absolute;
+  background: $navy;
+
+  &:before {
+    opacity: 1;
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+    bottom: 0;
+  }
+}
+
+.secondary-nav {
+  background: $salmon;
+}
+
+.secondary-nav .container {
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  @include bp-min-width($large) {
+    padding-top: $base;
+    padding-bottom: $base;
+  }
+}
+
+.secondary-nav a {
+  margin-right: 20px;
+  color: #fff;
+  font-weight: $weight-medium;
+}

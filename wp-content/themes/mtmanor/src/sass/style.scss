@@ -17,6 +17,7 @@ Description: Custom theme for Mt. Manor
 @import "base/layout";
 @import "base/buttons";
 @import "base/forms";
+@import "base/messages";
 
 @import "components/header";
 @import "components/nav";
@@ -29,6 +30,7 @@ Description: Custom theme for Mt. Manor
 @import "components/page-header";
 @import "components/filters";
 @import "components/pager";
+@import "components/breadcrumb";
 
 @import "pages/home";
 @import "pages/product";

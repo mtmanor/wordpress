@@ -151,8 +151,10 @@ function woocommerce_support() {
   add_theme_support( 'woocommerce' );
 }
 
+
 // Disable Woocommerce Styles
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+
 
 // Disable Woocommerce Product Tabs
 add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
@@ -163,6 +165,7 @@ function woo_remove_product_tabs( $tabs ) {
   return $tabs;
 }
 
+
 // Display Woocommerce Product Description in place of Summary
 function woocommerce_template_product_description() {
 	wc_get_template( 'single-product/tabs/description.php' );
@@ -170,9 +173,73 @@ function woocommerce_template_product_description() {
 }
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_product_description', 20 );
 
+
 // Move Product Cart above Product Description
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 15 );
 
+
 // Remove Product Meta (categories, tags)
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+
+
+// Move Messages above Product Breadcrumbs
+remove_action( 'woocommerce_before_single_product', 'wc_print_notices', 10 );
+add_action( 'woocommerce_before_main_content', 'wc_print_notices', 15 );
+
+
+// Remove Main Wrapper
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+
+
+// Remove Loop Add to Cart
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+
+
+// Update Loop Link Open
+remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
+function mtm_template_loop_product_link_open() {
+	$link = get_permalink();
+	echo '<a href="' . $link . '" class="product-grid--item col-1-3">';
+	echo '<div class="product-grid--item-wrapper">';
+}
+add_action( 'woocommerce_before_shop_loop_item', 'mtm_template_loop_product_link_open', 10 );
+
+
+// Update Loop Link Close
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
+function mtm_template_loop_product_link_close() {
+	echo '</div>';
+	echo '</a>';
+}
+add_action( 'woocommerce_after_shop_loop_item', 'mtm_template_loop_product_link_close', 5 );
+
+
+// Update Loop Product Title
+remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
+function mtm_template_loop_product_title() {
+	$title = get_the_title();
+	echo '<h2 class="product-grid--product-title">' . $title . '</h2>';
+}
+add_action( 'woocommerce_shop_loop_item_title', 'mtm_template_loop_product_title', 10 );
+
+// Update Loop Product Title
+// remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+// function mtm_template_loop_price() {
+// 	$price = $product->get_price_html();
+// 	echo '<p class="product-grid--product-price">' . echo $price . '</p>';
+// }
+// add_action( 'woocommerce_after_shop_loop_item_title', 'mtm_template_loop_price', 10 );
+
+
+// Edit Breadcrumb Ouput
+add_filter( 'woocommerce_breadcrumb_defaults', 'mtm_breadcrumbs' );
+function mtm_breadcrumbs() {
+  return array(
+    'delimiter'   => ' &#47; ',
+    'wrap_before' => '<nav class="breadcrumb" itemprop="breadcrumb"><div class="container">',
+    'wrap_after'  => '</div></nav>',
+    'home'        => _x( 'Home', 'breadcrumb', 'woocommerce' )
+  );
+}

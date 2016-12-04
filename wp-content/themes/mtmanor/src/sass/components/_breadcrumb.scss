@@ -1,0 +1,8 @@
+
+.breadcrumb {
+  padding: $base 20px;
+
+  @include bp-min-width($medium) {
+    padding-top: $base*2;
+  }
+}

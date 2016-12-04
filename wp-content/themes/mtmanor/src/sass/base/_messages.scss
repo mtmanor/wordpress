@@ -1,0 +1,13 @@
+
+.woocommerce-message {
+  padding: 12px 20px;
+  background: $salmon;
+  color: $navy;
+  text-align: center;
+  color: #fff;
+}
+
+.woocommerce-message .button {
+  @include btn__navy;
+  margin-right: 20px;
+}

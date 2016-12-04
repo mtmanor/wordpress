@@ -55,7 +55,7 @@
 				</button>
 			</form>
 
-			<a href="" class="header-cart-link">
+			<a href="#" class="header-cart-link">
 				<div class="header-cart-link--count">2</div>
 				<svg class="icon-cart">
 					<use xlink:href="#icon-cart"></use>
@@ -65,4 +65,4 @@
 		</div>
 	</header>
 
-	<main class="main">
+	<main class="main" role="main">

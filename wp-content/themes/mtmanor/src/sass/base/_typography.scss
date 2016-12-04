@@ -57,12 +57,27 @@ em {
 }
 
 .title__h4 {
+  font-weight: $weight-medium;
+
   @include bp-min-width($medium) {
+    @include font-size(18px);
   }
 }
 
 .title__h5 {
   @include bp-min-width($medium) {
+    @include font-size(16px);
+  }
+}
+
+.page-title {
+  padding-top: $base;
+  margin-bottom: $base;
+  text-align: center;
+
+  @include bp-min-width($medium) {
+    padding-top: $base*2;
+    margin-bottom: $base*2;
   }
 }
 

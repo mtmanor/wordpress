@@ -20,7 +20,7 @@ a {
   @include btn;
 }
 
-.btn__navy {
+@mixin btn__navy {
   border-color: $navy;
 
   &:hover {
@@ -29,7 +29,7 @@ a {
   }
 }
 
-.btn__salmon {
+@mixin btn__salmon {
   border-color: $salmon;
   color: $salmon;
 
@@ -39,7 +39,7 @@ a {
   }
 }
 
-.btn__white {
+@mixin btn__white {
   border-color: #fff;
   color: #fff;
 
@@ -49,7 +49,7 @@ a {
   }
 }
 
-.btn__grey {
+@mixin btn__grey {
   border-color: $grey;
   color: $grey;
 
@@ -59,6 +59,32 @@ a {
   }
 }
 
+@mixin btn__solid-navy {
+  border-color: $navy;
+  background: $navy;
+  color: #fff;
+
+  &:hover {
+    background: transparent;
+    color: $navy;
+  }
+}
+
+.btn__navy {
+  @include btn__navy;
+}
+
+.btn__salmon {
+  @include btn__salmon;
+}
+
+.btn__white {
+  @include btn__white;
+}
+
+.btn__solid-navy {
+  @include btn__solid-navy;
+}
 
 input[type="submit"],
 input[type="button"],

@@ -183,14 +183,14 @@ add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_a
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
 
-// Move Messages above Product Breadcrumbs
-remove_action( 'woocommerce_before_single_product', 'wc_print_notices', 10 );
-add_action( 'woocommerce_before_main_content', 'wc_print_notices', 15 );
-
-
 // Remove Main Wrapper
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+
+
+// Move Messages above Product Breadcrumbs
+remove_action( 'woocommerce_before_single_product', 'wc_print_notices', 10 );
+add_action( 'woocommerce_before_main_content', 'wc_print_notices', 15 );
 
 
 // Remove Loop Add to Cart
@@ -233,13 +233,20 @@ add_action( 'woocommerce_shop_loop_item_title', 'mtm_template_loop_product_title
 // add_action( 'woocommerce_after_shop_loop_item_title', 'mtm_template_loop_price', 10 );
 
 
-// Edit Breadcrumb Ouput
-add_filter( 'woocommerce_breadcrumb_defaults', 'mtm_breadcrumbs' );
-function mtm_breadcrumbs() {
-  return array(
-    'delimiter'   => ' &#47; ',
-    'wrap_before' => '<nav class="breadcrumb" itemprop="breadcrumb"><div class="container">',
-    'wrap_after'  => '</div></nav>',
-    'home'        => _x( 'Home', 'breadcrumb', 'woocommerce' )
-  );
+// Move Category Breadcrumbs
+function mtm_remove_category_breadcrumb() {
+	if ( is_product_category() ) {
+		remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+		add_action( 'woocommerce_before_shop_loop', 'woocommerce_breadcrumb', 5 );
+	}
+}
+add_action( 'template_redirect', 'mtm_remove_category_breadcrumb' );
+
+
+// Update
+add_filter( 'woocommerce_breadcrumb_defaults', 'mtm_change_breadcrumb_wrapper' );
+function mtm_change_breadcrumb_wrapper( $defaults ) {
+	$defaults['wrap_before'] = '<nav class="breadcrumb" itemprop="breadcrumb"><div class="container">';
+	$defaults['wrap_after'] = '</div></nav>';
+	return $defaults;
 }

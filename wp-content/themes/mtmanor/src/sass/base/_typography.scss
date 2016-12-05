@@ -70,17 +70,6 @@ em {
   }
 }
 
-.page-title {
-  padding-top: $base;
-  margin-bottom: $base;
-  text-align: center;
-
-  @include bp-min-width($medium) {
-    padding-top: $base*2;
-    margin-bottom: $base*2;
-  }
-}
-
 .section-title {
   margin-bottom: $base;
   text-align: center;

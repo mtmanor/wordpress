@@ -41,13 +41,12 @@
 }
 
 .main-nav li a {
-  @include font-size(24px);
   display: block;
   color: #fff;
   font-weight: $weight-medium;
 
-  @include bp-min-width($large) {
-    @include font-size(18px);
+  @include bp-max-width($large) {
+    @include font-size(24px);
   }
 }
 

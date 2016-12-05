@@ -7,12 +7,12 @@
 	}
 }
 
-.home-hero .container {
+.home-hero--link {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 400px;
-	background: $navy $home-hero no-repeat center;
+	background-color: $navy;
 	background-size: cover;
 
 	@include bp-min-width($medium) {

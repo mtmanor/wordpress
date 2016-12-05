@@ -4,9 +4,7 @@
 
 		<h1 class="page-title title__h1"><?php the_title(); ?></h1>
 
-		<div class="">
-			<?php the_content(); ?>
-		</div>
+		<?php the_content(); ?>
 
 	<?php endwhile; endif; ?>
 

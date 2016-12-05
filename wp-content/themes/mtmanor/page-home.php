@@ -1,7 +1,35 @@
 <?php /* Template Name: Home */ ?>
 <?php get_header(); ?>
 
-<section>
+<?php
+if( have_rows('home_hero') ): ?>
+<section class="home-hero">
+	<div class="container">
+	<?php
+	while ( have_rows('home_hero') ) : the_row(); ?>
+		<?php $image = get_sub_field('hero_image'); ?>
+		<a href="<?php the_sub_field('hero_button_link'); ?>" class="home-hero--link" style="background-image: url(<?php echo $image['url']; ?>);">
+			<div class="home-hero--block">
+				<h1 class="home-hero--title title__h1"><?php the_sub_field('hero_title'); ?></h1>
+				<p><span class="btn btn__salmon"><?php the_sub_field('hero_button_label'); ?></span></p>
+			</div>
+		</a>
+
+	<?php endwhile; ?>
+	</div>
+</section>
+<?php endif; ?>
+
+<!-- <section class="home-hero">
+	<div class="container">
+		<a href="" class="home-hero--block">
+			<h1 class="home-hero--title title__h1">Herschel Supply Retreat Black Canvas Bag</h1>
+			<p ><span class="btn btn__salmon">2195 SEK</span></p>
+		</a>
+	</div>
+</section> -->
+
+<section class="featured-products">
 	<div class="container">
 
 		<div class="product-grid flex-grid">

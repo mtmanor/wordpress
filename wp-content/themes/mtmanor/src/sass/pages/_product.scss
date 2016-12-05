@@ -16,6 +16,7 @@
 	justify-content: center;
 	align-items: center;
 	background: $grey;
+	cursor: default;
 
 	@include bp-min-width($medium) {
 		height: 550px;

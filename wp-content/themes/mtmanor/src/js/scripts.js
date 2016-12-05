@@ -66,6 +66,11 @@ jQuery(document).ready(function($) {
   var productThumbToggle = function() {
     var productThumbLink = $('.product-images--thumb');
     var productMainImage = $('.product-images--main .wp-post-image');
+    var productMainImageLink = $('.product-images--main');
+
+    productMainImageLink.bind('click', function(e){
+      e.preventDefault();
+    });
 
     productThumbLink.bind('click', function(e){
       e.preventDefault();

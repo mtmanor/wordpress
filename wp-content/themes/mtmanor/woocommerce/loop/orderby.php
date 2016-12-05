@@ -21,13 +21,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<form class="product-filters" method="get">
+<form class="product-filters woocommerce-ordering" method="get">
 	<div class="filter filter--select">
 		<div class="filter--select-container">
 			<select name="orderby" class="orderby">
-					<?php foreach ( $catalog_orderby_options as $id => $name ) : ?>
-						<option value="<?php echo esc_attr( $id ); ?>" <?php selected( $orderby, $id ); ?>><?php echo esc_html( $name ); ?></option>
-					<?php endforeach; ?>
+				<?php foreach ( $catalog_orderby_options as $id => $name ) : ?>
+					<option value="<?php echo esc_attr( $id ); ?>" <?php selected( $orderby, $id ); ?>><?php echo esc_html( $name ); ?></option>
+				<?php endforeach; ?>
 			</select>
 		</div>
 	</div>

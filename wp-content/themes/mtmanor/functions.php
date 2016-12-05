@@ -216,6 +216,14 @@ function mtm_template_loop_product_link_close() {
 add_action( 'woocommerce_after_shop_loop_item', 'mtm_template_loop_product_link_close', 5 );
 
 
+// Loop Product Thumb Wrapper
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
+function woocommerce_template_loop_product_thumbnail() {
+	echo '<div class="product-grid--thumb">' . woocommerce_get_product_thumbnail() . '</div>';
+}
+add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
+
+
 // Update Loop Product Title
 remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
 function mtm_template_loop_product_title() {
@@ -223,14 +231,6 @@ function mtm_template_loop_product_title() {
 	echo '<h2 class="product-grid--product-title">' . $title . '</h2>';
 }
 add_action( 'woocommerce_shop_loop_item_title', 'mtm_template_loop_product_title', 10 );
-
-// Update Loop Product Title
-// remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
-// function mtm_template_loop_price() {
-// 	$price = $product->get_price_html();
-// 	echo '<p class="product-grid--product-price">' . echo $price . '</p>';
-// }
-// add_action( 'woocommerce_after_shop_loop_item_title', 'mtm_template_loop_price', 10 );
 
 
 // Move Category Breadcrumbs

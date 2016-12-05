@@ -46,9 +46,9 @@ $woocommerce_loop['columns'] = apply_filters( 'woocommerce_related_products_colu
 
 if ( $products->have_posts() ) : ?>
 
-	<div class="related products">
+	<div class="related-products col-100">
 
-		<h2><?php _e( 'Related Products', 'woocommerce' ); ?></h2>
+		<h2 class="section-title title__h1"><?php _e( 'Related Products', 'woocommerce' ); ?></h2>
 
 		<?php woocommerce_product_loop_start(); ?>
 

@@ -20,15 +20,6 @@ if( have_rows('home_hero') ): ?>
 </section>
 <?php endif; ?>
 
-<!-- <section class="home-hero">
-	<div class="container">
-		<a href="" class="home-hero--block">
-			<h1 class="home-hero--title title__h1">Herschel Supply Retreat Black Canvas Bag</h1>
-			<p ><span class="btn btn__salmon">2195 SEK</span></p>
-		</a>
-	</div>
-</section> -->
-
 <section class="featured-products">
 	<div class="container">
 

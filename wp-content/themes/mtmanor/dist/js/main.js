@@ -63,9 +63,38 @@ jQuery(document).ready(function($) {
     });
   }
 
+  var productThumbToggle = function() {
+    var productThumbLink = $('.product-images--thumb');
+    var productMainImage = $('.product-images--main .wp-post-image');
+
+    productThumbLink.bind('click', function(e){
+      e.preventDefault();
+      var searchSrc = /(-?)([\d]{2,4})((\s*)(x)(\s*))([\d]{2,4})/;
+
+      var searchSrcset = /([\d]{2,4})((\s*)(x)(\s*))([\d]{2,4})/;
+
+      var img = $(this).find('img');
+      var src = img.attr('src');
+      var srcset = img.attr('srcset');
+      var srcUrl = src.replace(searchSrc, '');
+      // var srcsetURL = srcset.replace(search, '');
+
+      productMainImage.attr('src', srcUrl);
+      productMainImage.attr('srcset', '');
+      productThumbLink.removeClass('is-active');
+      $(this).addClass('is-active');
+
+      console.log(srcUrl);
+
+    });
+
+  }
+
+
   mobileNav();
   mobileSearch();
   cartDrawerToggle();
   productFilterToggle();
+  productThumbToggle();
 
 });

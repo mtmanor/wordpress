@@ -34,6 +34,12 @@
   }
 }
 
+.col-100 {
+  @include bp-min-width($medium) {
+    width: 100%;
+  }
+}
+
 .col-3-4 {
   @include bp-min-width($medium) {
     width: 75%;

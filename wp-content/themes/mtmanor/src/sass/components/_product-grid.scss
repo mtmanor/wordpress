@@ -57,9 +57,16 @@
 }
 
 .product-grid--thumb {
-	display: inline-block;
 	max-width: 300px;
-	margin-bottom: 6px;
+	margin-bottom: 12px;
+
+	@include bp-min-width($medium) {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 300px;
+		margin: 0 auto 6px;
+	}
 }
 
 .product-grid--product-title {

@@ -36,7 +36,7 @@ if ( $attachment_ids ) {
 				$classes = array( 'zoom' );
 
 				if ( $loop === 0 || $loop % $columns === 0 ) {
-					$classes[] = 'first';
+					$classes[] = 'is-active';
 				}
 
 				if ( ( $loop + 1 ) % $columns === 0 ) {

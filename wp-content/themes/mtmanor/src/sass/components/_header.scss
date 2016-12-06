@@ -1,14 +1,22 @@
 
-.header {
-	background: $navy;
-}
-
-.header-message {
+.message-bar {
 	@include font-size(14px);
 	padding: 12px;
 	background: #000;
 	color: #fff;
 	text-align: center;
+}
+
+.header {
+	background: $navy;
+
+	&.js-is-sticky {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 100;
+	}
 }
 
 .header .container {
@@ -45,11 +53,6 @@
 .icon-logo-mark {
 	width: 46px;
 	height: 46px;
-}
-
-.home .header-logo {
-	width: 108px;
-	height: 87px;
 }
 
 .home .icon-logo {

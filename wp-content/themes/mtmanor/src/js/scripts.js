@@ -1,5 +1,23 @@
 jQuery(document).ready(function($) {
 
+  var stickyHeader = function() {
+    var body = $('body');
+    var header = $('.header');
+    var headerPos = header.offset();
+    var headerTopPos = headerPos.top;
+
+    $(window).on('scroll', function(e) {
+      var topPos = $(window).scrollTop();
+      if(topPos >= headerTopPos) {
+        header.addClass('js-is-sticky');
+        body.addClass('js-sticky-header');
+      } else {
+        header.removeClass('js-is-sticky');
+        body.removeClass('js-sticky-header');
+      }
+    });
+  };
+
   var mobileNav = function() {
     var body = $('body');
     var mobileNavTrigger = $('.hamburger');
@@ -95,7 +113,7 @@ jQuery(document).ready(function($) {
 
   }
 
-
+  stickyHeader();
   mobileNav();
   mobileSearch();
   cartDrawerToggle();

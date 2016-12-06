@@ -8,23 +8,25 @@
 }
 
 .header {
+	position: absolute;
+	top: 48px;
+	left: 0;
+	right: 0;
+	z-index: 100;
 	background: $navy;
 
 	&.js-is-sticky {
 		position: fixed;
 		top: 0;
-		left: 0;
-		right: 0;
-		z-index: 100;
 	}
 }
 
 .header .container {
+	transition: height .25s ease-in;
 	position: relative;
-	height: 72px;
-}
+	padding-top: 12px;
+	padding-bottom: 12px;
 
-.home .header .container {
 	@include bp-min-width($medium) {
 		height: 146px;
     padding-top: 30px;
@@ -32,16 +34,26 @@
   }
 }
 
-.header-logo {
-	@include absolute-center;
-	display: block;
-	width: 46px;
-	height: 46px;
+.header.js-is-sticky .container {
+	position: relative;
+
+	@include bp-min-width($medium) {
+		height: 84px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 }
 
-.home .header-logo {
+.header-logo {
+	@include absolute-center;
+	transition: height .25s ease-in;
+	display: block;
 	width: 108px;
-	height: 87px;
+	height: 86px;
+}
+
+.js-is-sticky .header-logo {
+	height: 46px;
 }
 
 .icon-logo {
@@ -50,17 +62,32 @@
 	height: 87px;
 }
 
-.icon-logo-mark {
+.header .icon-logo-mark {
+	// display: none;
+	@include horizontal-center;
+	transition: width .25s ease-in, height .25s ease-in;
+	top: 0;
+	width: 60px;
+	height: 60px;
+}
+
+.icon-logo-type {
+	@include horizontal-center;
+	transition: opacity .25s ease-in;
+	bottom: 0;
+	opacity: 1;
+	fill: #fefefe;
+	width: 108px;
+	height: 14px;
+}
+
+.js-is-sticky .icon-logo-mark {
 	width: 46px;
 	height: 46px;
 }
 
-.home .icon-logo {
-	display: inline-block;
-}
-
-.home .icon-logo-mark {
-	display: none;
+.js-is-sticky .icon-logo-type {
+	opacity: 0;
 }
 
 .header-search,

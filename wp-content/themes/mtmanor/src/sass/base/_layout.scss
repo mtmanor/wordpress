@@ -3,9 +3,14 @@
   overflow: hidden;
 }
 
-.js-sticky-header {
+.main {
+  transition: padding .3s ease-in;
   padding-top: 146px;
 }
+
+// .js-sticky-header .main {
+//   padding-top: 72px;
+// }
 
 .container {
   max-width: 1264px;

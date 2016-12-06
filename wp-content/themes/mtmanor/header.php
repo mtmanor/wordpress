@@ -28,6 +28,9 @@
 				<svg class="icon-logo-mark">
 					<use xlink:href="#icon-logo-mark"></use>
 				</svg>
+				<svg class="icon-logo-type">
+					<use xlink:href="#icon-logo-type"></use>
+				</svg>
 			</a>
 
 			<div class="header-search">

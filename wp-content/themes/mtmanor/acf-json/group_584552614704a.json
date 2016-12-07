@@ -8,7 +8,7 @@
                     "key": "584552b180c5b",
                     "name": "",
                     "label": "",
-                    "display": "block",
+                    "display": "table",
                     "sub_fields": [
                         {
                             "default_value": "",
@@ -111,6 +111,132 @@
                 "class": "",
                 "id": ""
             }
+        },
+        {
+            "layouts": [
+                {
+                    "key": "5847d3a91dc53",
+                    "name": "",
+                    "label": "",
+                    "display": "table",
+                    "sub_fields": [
+                        {
+                            "taxonomy": "product_cat",
+                            "field_type": "select",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "return_format": "object",
+                            "add_term": 0,
+                            "load_terms": 0,
+                            "save_terms": 0,
+                            "key": "field_5847d3c1f8a60",
+                            "label": "Product Category",
+                            "name": "product_category",
+                            "type": "taxonomy",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            }
+                        },
+                        {
+                            "return_format": "array",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "key": "field_5847d7de4bdff",
+                            "label": "Background Image",
+                            "name": "background_image",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            }
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            ],
+            "min": "",
+            "max": "",
+            "button_label": "Add Category",
+            "key": "field_5847d35cf8a5f",
+            "label": "Primary Featured Categories",
+            "name": "primary_featured_categories",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "layouts": [
+                {
+                    "key": "5847f95155eaa",
+                    "name": "",
+                    "label": "",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "taxonomy": "product_cat",
+                            "field_type": "select",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "return_format": "object",
+                            "add_term": 0,
+                            "load_terms": 0,
+                            "save_terms": 0,
+                            "key": "field_5847f956b430a",
+                            "label": "Category",
+                            "name": "category",
+                            "type": "taxonomy",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            }
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            ],
+            "min": "",
+            "max": "",
+            "button_label": "Add Row",
+            "key": "field_5847f948b4309",
+            "label": "Featured Categories",
+            "name": "featured_categories",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
         }
     ],
     "location": [
@@ -127,8 +253,10 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1480938291
+    "modified": 1481120281
 }

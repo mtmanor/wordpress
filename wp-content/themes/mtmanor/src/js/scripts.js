@@ -93,8 +93,7 @@ jQuery(document).ready(function($) {
     productThumbLink.bind('click', function(e){
       e.preventDefault();
       var searchSrc = /(-?)([\d]{2,4})((\s*)(x)(\s*))([\d]{2,4})/;
-
-      var searchSrcset = /([\d]{2,4})((\s*)(x)(\s*))([\d]{2,4})/;
+      // var searchSrcset = /([\d]{2,4})((\s*)(x)(\s*))([\d]{2,4})/;
 
       var img = $(this).find('img');
       var src = img.attr('src');
@@ -106,9 +105,6 @@ jQuery(document).ready(function($) {
       productMainImage.attr('srcset', '');
       productThumbLink.removeClass('is-active');
       $(this).addClass('is-active');
-
-      console.log(srcUrl);
-
     });
 
   }

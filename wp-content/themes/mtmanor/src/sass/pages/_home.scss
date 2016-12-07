@@ -92,16 +92,10 @@
 	justify-content: center;
 	align-items: center;
 	height: 436px;
-}
-
-.featured-categories--thumb {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	background: $grey;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 }
 
 .featured-categories--overlay {

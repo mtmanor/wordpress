@@ -7,45 +7,77 @@
 }
 
 .main-nav .menu {
-  display: flex;
-
   @include bp-max-width($large) {
     display: none;
+  }
+
+  @include bp-min-width($large) {
+    display: flex;
   }
 }
 
 .main-nav .menu.js-is-visible {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 5;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background: $navy;
+  @include bp-max-width($large) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    display: block;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    padding-top: $base*6;
+    padding-bottom: $base*2;
+    background: $navy;
+  }
 }
 
 .main-nav li:not(:last-child) {
-  @include bp-max-width($large) {
-    margin-bottom: $base;
-  }
-
   @include bp-min-width($large) {
     margin-right: 30px;
   }
 }
 
-.main-nav li a {
+.main-nav .menu > li > a {
   display: block;
   color: #fff;
   font-weight: $weight-medium;
 
   @include bp-max-width($large) {
     @include font-size(24px);
+    position: relative;
+    font-family: $serif;
+    padding: 16px 20px;
   }
+}
+
+.main-nav .menu > li > a:before {
+  @include bp-max-width($large) {
+    @include vertical-center;
+    right: 20px;
+    content: '';
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: $salmon;
+  }
+}
+
+.main-nav .menu > li > a:after {
+  @include bp-max-width($large) {
+    @include vertical-center;
+    transition: height .2s ease-in;
+    right: 28px;
+    content: '';
+    display: block;
+    width: 2px;
+    height: 18px;
+    background: $salmon;
+  }
+}
+
+.main-nav .menu > .js-is-active > a:after {
+  height: 0;
 }

@@ -23,11 +23,19 @@ jQuery(document).ready(function($) {
     var mobileNavTrigger = $('.hamburger');
     var mobileNavContainer = $('.menu');
 
+    var mobileNavParentItem = $('.main-nav .menu > li > a');
+
     mobileNavTrigger.bind('click', function(e){
       e.preventDefault();
       $(this).toggleClass('js-is-active');
       body.toggleClass('js-no-scroll');
       mobileNavContainer.toggleClass('js-is-visible');
+    });
+
+    mobileNavParentItem.bind('click', function(e){
+      e.preventDefault();
+      $(this).parent().find('.sub-menu').slideToggle();
+      $(this).parent().toggleClass('js-is-active');
     });
   }
 

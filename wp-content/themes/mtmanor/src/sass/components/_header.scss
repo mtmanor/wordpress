@@ -50,6 +50,7 @@
 	transition: height .25s ease-in;
 	display: block;
 	height: 46px;
+	z-index: 100;
 
 	@include bp-min-width($medium) {
 		width: 108px;

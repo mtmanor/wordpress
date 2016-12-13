@@ -4,7 +4,9 @@
 }
 
 .main {
-  padding-top: 146px;
+  @include bp-min-width($medium) {
+    padding-top: 146px;
+  }
 }
 
 .container {

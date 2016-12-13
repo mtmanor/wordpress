@@ -22,9 +22,6 @@
 			</nav>
 
 			<a href="<?php echo site_url(); ?>" class="header-logo">
-				<svg class="icon-logo">
-					<use xlink:href="#icon-logo"></use>
-				</svg>
 				<svg class="icon-logo-mark">
 					<use xlink:href="#icon-logo-mark"></use>
 				</svg>
@@ -58,8 +55,12 @@
 				</button>
 			</form>
 
-			<a href="#" class="header-cart-link">
-				<div class="header-cart-link--count">2</div>
+			<a href="<?php echo wc_get_cart_url(); ?>" class="header-cart-link" title="<?php _e( 'View your shopping cart' ); ?>">
+				<?php
+				$count = WC()->cart->get_cart_contents_count();
+				if ($count > 0): ?>
+				<div class="header-cart-link--count"><?php echo $count; ?></div>
+				<?php endif; ?>
 				<svg class="icon-cart">
 					<use xlink:href="#icon-cart"></use>
 				</svg>

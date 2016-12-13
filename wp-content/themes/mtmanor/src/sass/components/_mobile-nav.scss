@@ -1,0 +1,93 @@
+
+.main-nav .sub-menu {
+  @include bp-min-width($large) {
+    display: none;
+  }
+}
+
+.hamburger {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  z-index: 10;
+
+  @include bp-max-width($large) {
+    @include vertical-center;
+    left: 20px;
+  }
+
+  @include bp-min-width($large) {
+    display: none;
+  }
+}
+
+.hamburger--bar {
+  position: relative;
+}
+
+.hamburger--bar,
+.hamburger--bar:before,
+.hamburger--bar:after {
+  @include global-transition(0.1s);
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: #fff;
+}
+
+.hamburger--bar:before,
+.hamburger--bar:after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.hamburger--bar:before {
+  transform: rotate(0);
+  top: -10px;
+}
+
+.hamburger--bar:after {
+  transform: rotate(0);
+  bottom: -10px;
+}
+
+.hamburger--bar {
+  opacity: 1;
+}
+
+.js-is-active .hamburger--bar {
+  position: absolute;
+  background: $navy;
+
+  &:before {
+    opacity: 1;
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+    bottom: 0;
+  }
+}
+
+.secondary-nav {
+  background: $salmon;
+}
+
+.secondary-nav .container {
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  @include bp-min-width($large) {
+    padding-top: $base;
+    padding-bottom: $base;
+  }
+}
+
+.secondary-nav a {
+  margin-right: 20px;
+  color: #fff;
+  font-weight: $weight-medium;
+}

@@ -23,6 +23,7 @@
 
 .header .container {
 	transition: height .25s ease-in;
+	height: 72px;
 	position: relative;
 	padding-top: 12px;
 	padding-bottom: 12px;
@@ -48,8 +49,12 @@
 	@include absolute-center;
 	transition: height .25s ease-in;
 	display: block;
-	width: 108px;
-	height: 86px;
+	height: 46px;
+
+	@include bp-min-width($medium) {
+		width: 108px;
+		height: 86px;
+	}
 }
 
 .js-is-sticky .header-logo {
@@ -63,12 +68,16 @@
 }
 
 .header .icon-logo-mark {
-	// display: none;
 	@include horizontal-center;
 	transition: width .25s ease-in, height .25s ease-in;
 	top: 0;
-	width: 60px;
-	height: 60px;
+	width: 46px;
+	height: 46px;
+
+	@include bp-min-width($medium) {
+		width: 60px;
+		height: 60px;
+	}
 }
 
 .icon-logo-type {
@@ -79,6 +88,10 @@
 	fill: #fefefe;
 	width: 108px;
 	height: 14px;
+
+	@include bp-max-width($medium) {
+		display: none;
+	}
 }
 
 .js-is-sticky .icon-logo-mark {

@@ -4,7 +4,9 @@
 }
 
 .main {
-  @include bp-min-width($medium) {
+  padding-top: 72px;
+
+  @include bp-min-width($large) {
     padding-top: 146px;
   }
 }

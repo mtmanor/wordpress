@@ -1,4 +1,14 @@
 
+.grid-filters .breadcrumb .container {
+  padding-left: 0;
+  padding-right: 0;
+  width: auto;
+
+  @include bp-max-width($large) {
+    padding-bottom: 6px;
+  }
+}
+
 .single-product .breadcrumb .container {
   padding-top: $base;
   padding-bottom: $base;

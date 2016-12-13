@@ -8,6 +8,7 @@
 }
 
 .header {
+	// transition: top .3s ease-in-out;
 	position: absolute;
 	top: 48px;
 	left: 0;
@@ -28,7 +29,7 @@
 	padding-top: 12px;
 	padding-bottom: 12px;
 
-	@include bp-min-width($medium) {
+	@include bp-min-width($large) {
 		height: 146px;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -38,7 +39,7 @@
 .header.js-is-sticky .container {
 	position: relative;
 
-	@include bp-min-width($medium) {
+	@include bp-min-width($large) {
 		height: 84px;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -52,7 +53,7 @@
 	height: 46px;
 	z-index: 100;
 
-	@include bp-min-width($medium) {
+	@include bp-min-width($large) {
 		width: 108px;
 		height: 86px;
 	}
@@ -75,7 +76,7 @@
 	width: 46px;
 	height: 46px;
 
-	@include bp-min-width($medium) {
+	@include bp-min-width($large) {
 		width: 60px;
 		height: 60px;
 	}
@@ -90,7 +91,7 @@
 	width: 108px;
 	height: 14px;
 
-	@include bp-max-width($medium) {
+	@include bp-max-width($large) {
 		display: none;
 	}
 }

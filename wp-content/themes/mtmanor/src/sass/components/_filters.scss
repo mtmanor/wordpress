@@ -6,7 +6,15 @@
 }
 
 .filter--select {
-	margin-right: 20px;
+	@include bp-max-width($medium) {
+		width: 100%;
+		padding: 0 20px;
+		border: 1px solid $navy;
+	}
+
+	@include bp-min-width($medium) {
+		margin-right: 20px;
+	}
 }
 
 .filter--select select {

@@ -1,0 +1,12 @@
+
+.onsale {
+  @include font-size(14px);
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 2px 12px;
+	background: $navy;
+	color: #fff;
+  font-weight: $weight-medium;
+  text-transform: uppercase;
+}

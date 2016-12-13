@@ -201,7 +201,7 @@ remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_ad
 remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
 function mtm_template_loop_product_link_open() {
 	$link = get_permalink();
-	echo '<a href="' . $link . '" class="product-grid--item col-1-3">';
+	echo '<a href="' . $link . '" class="product-grid--item col-1-4">';
 	echo '<div class="product-grid--item-wrapper">';
 }
 add_action( 'woocommerce_before_shop_loop_item', 'mtm_template_loop_product_link_open', 10 );
@@ -243,10 +243,16 @@ function mtm_remove_category_breadcrumb() {
 add_action( 'template_redirect', 'mtm_remove_category_breadcrumb' );
 
 
-// Update
+// Add Container Wrapper to Breadcrumbs
 add_filter( 'woocommerce_breadcrumb_defaults', 'mtm_change_breadcrumb_wrapper' );
 function mtm_change_breadcrumb_wrapper( $defaults ) {
 	$defaults['wrap_before'] = '<nav class="breadcrumb" itemprop="breadcrumb"><div class="container">';
 	$defaults['wrap_after'] = '</div></nav>';
 	return $defaults;
+}
+
+// Update Sale Label
+add_filter( 'woocommerce_sale_flash', 'wc_custom_replace_sale_text' );
+function wc_custom_replace_sale_text( $html ) {
+    return str_replace( __( 'Sale!', 'woocommerce' ), __( 'Sale', 'woocommerce' ), $html );
 }

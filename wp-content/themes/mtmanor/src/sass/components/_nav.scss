@@ -50,6 +50,12 @@
   }
 }
 
+.main-nav .sub-menu {
+  @include bp-min-width($large) {
+    display: none;
+  }
+}
+
 .hamburger {
   display: flex;
   align-items: center;

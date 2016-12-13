@@ -28,6 +28,10 @@ em {
   font-style: none;
 }
 
+ins {
+  text-decoration: none;
+}
+
 .title__h1 {
   @include font-size(24px);
   font-family: $serif;

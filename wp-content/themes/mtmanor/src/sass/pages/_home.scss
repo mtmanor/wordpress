@@ -3,7 +3,7 @@
 	margin-bottom: $base;
 
 	@include bp-min-width($medium) {
-		margin-bottom: $base*2;
+		margin-bottom: 30px;
 	}
 }
 
@@ -47,7 +47,12 @@
 }
 
 .recommended-products {
-	margin-bottom: $base*2;
+	margin-bottom: $base;
+
+	@include bp-min-width($medium) {
+		margin-bottom: $base*3;
+		padding-top: $base;
+	}
 }
 
 .recommended-products--wrapper {

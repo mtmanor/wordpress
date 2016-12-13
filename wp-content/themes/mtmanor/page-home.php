@@ -56,11 +56,11 @@ if( have_rows('home_hero') ): ?>
 				$thumbnail_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
 		    $image = wp_get_attachment_url( $thumbnail_id );
 				?>
-					<a href="<?php echo get_term_link( $term ); ?>" class="product-grid--item col-1-3">
+					<a href="<?php echo get_term_link( $term ); ?>" class="product-grid--item col-1-4">
 						<div class="product-grid--item-wrapper">
 							<div class="product-grid--overlay">
 								<h3 class="product-grid--overlay-title title__h2"><?php echo $term->name; ?></h3>
-								<!-- <p class="product-grid--overlay-info">6 produkter från Sandqvist och Herschel</p> -->
+								<p class="product-grid--overlay-info"><?php echo $term->count; ?> produkter</p>
 								<span class="btn btn__salmon">Gå direkt</span>
 							</div>
 							<div class="product-grid--thumb">
@@ -87,7 +87,7 @@ if( have_rows('home_hero') ): ?>
 				<?php
 					$args = array(
 						'post_type' => 'product',
-						'posts_per_page' => 12
+						'posts_per_page' => 4
 						);
 					$loop = new WP_Query( $args );
 					if ( $loop->have_posts() ) {

@@ -1,7 +1,10 @@
 
 .product .container {
 	position: relative;
-	padding-bottom: $base*2;
+
+	@include bp-min-width($medium) {
+		padding-bottom: $base*2;
+	}
 }
 
 .product-images {
@@ -16,11 +19,13 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding: 20px;
 	background: $grey;
 	cursor: default;
 
 	@include bp-min-width($medium) {
 		height: 550px;
+		padding: 40px;
 	}
 }
 
@@ -30,8 +35,13 @@
 }
 
 .product-images--thumb {
-	width: 120px;
+	width: 66px;
 	border: 1px solid $grey;
+
+	@include bp-min-width($medium) {
+		width: 120px;
+	}
+
 
 	&.is-active {
 		border: 1px solid $navy;
@@ -42,11 +52,11 @@
 	margin-right: 20px;
 }
 
-.product-title {
+.product-details .product-title {
 	line-height: 1.166;
 }
 
-.product-price {
+.product-details .product-price {
 	margin-bottom: 30px;
 	color: $salmon;
 	line-height: 1.166;

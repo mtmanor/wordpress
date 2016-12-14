@@ -27,6 +27,7 @@
 
 .hamburger {
   @include vertical-center;
+  transition: none;
   display: flex;
   align-items: center;
   height: 30px;
@@ -36,6 +37,12 @@
   @include bp-min-width($large) {
     display: none;
   }
+}
+
+.hamburger.js-is-active {
+  transform: translateY(0);
+  position: fixed;
+  top: 20px;
 }
 
 .hamburger--bar {
@@ -87,24 +94,4 @@
     transform: rotate(-45deg);
     bottom: 0;
   }
-}
-
-.secondary-nav {
-  background: $salmon;
-}
-
-.secondary-nav .container {
-  padding-top: 12px;
-  padding-bottom: 12px;
-
-  @include bp-min-width($large) {
-    padding-top: $base;
-    padding-bottom: $base;
-  }
-}
-
-.secondary-nav a {
-  margin-right: 20px;
-  color: #fff;
-  font-weight: $weight-medium;
 }

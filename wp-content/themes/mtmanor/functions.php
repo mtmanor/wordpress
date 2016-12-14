@@ -252,7 +252,16 @@ function mtm_change_breadcrumb_wrapper( $defaults ) {
 }
 
 // Update Sale Label
-add_filter( 'woocommerce_sale_flash', 'wc_custom_replace_sale_text' );
-function wc_custom_replace_sale_text( $html ) {
-    return str_replace( __( 'Sale!', 'woocommerce' ), __( 'Sale', 'woocommerce' ), $html );
+add_filter( 'woocommerce_sale_flash', 'mtm_custom_replace_sale_text' );
+function mtm_custom_replace_sale_text( $html ) {
+  return str_replace( __( 'Sale!', 'woocommerce' ), __( 'Sale', 'woocommerce' ), $html );
 }
+
+remove_action( 'woocommerce_before_cart', 'wccm_before_checkout', 10, 1 );
+// add_action('woocommerce_before_cart', 'mtm_before_cart', 10, 1 );
+// function mtm_before_cart( $wccm_before_checkout ) {
+// 	echo '<div class="flex-grid">';
+// }
+
+// remove the action 
+remove_action( 'woocommerce_before_cart', 'action_woocommerce_before_cart', 10, 1 );

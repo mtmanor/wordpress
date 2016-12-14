@@ -8,11 +8,13 @@ a {
   @include font-size(18px);
   transition: all .1s ease-in;
   display: inline-block;
-  padding: 12px 24px;
+  padding: 13px 24px;
   background: none;
   border-style: solid;
   border-width: 2px;
+  line-height: 1;
   font-weight: $weight-medium;
+  text-align: center;
 }
 
 .btn,
@@ -89,10 +91,8 @@ a {
 input[type="submit"],
 input[type="button"],
 button {
-  @include global-transition(.1s);
+  transition: all .1s ease-in;
   margin: 0;
-  padding: 0;
-  border: none;
   outline: none;
   cursor: pointer;
 }

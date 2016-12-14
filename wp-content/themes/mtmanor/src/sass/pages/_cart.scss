@@ -1,0 +1,142 @@
+
+.cart .container {
+	@include bp-min-width($large) {
+		padding-bottom: $base*4;
+	}
+}
+
+.cart .woocommerce-message {
+	margin-bottom: $base;
+}
+
+.shop_table {
+	width: 100%;
+}
+
+.col-3-4.cart-product-list {
+	padding-right: 40px;
+}
+
+.product-list-table th {
+	@include font-size(13px);
+	border-bottom: 1px solid $grey;
+	font-weight: $weight-medium;
+	text-transform: uppercase;
+	letter-spacing: .05em;
+}
+
+.product-remove a {
+	position: relative;
+	display: block;
+	width: 20px;
+	height: 20px;
+	text-indent: -999em;
+}
+
+.product-remove a:before,
+.product-remove a:after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 20px;
+	height: 2px;
+	background: $navy;
+}
+
+.product-remove a:before {
+	transform: rotate(45deg);
+}
+
+.product-remove a:after {
+	transform: rotate(-45deg);
+}
+
+.cart .product-thumbnail {
+	width: 144px;
+	padding: 20px 20px 0;
+}
+
+.product-name {
+	@include font-size(18px);
+	font-weight: $weight-medium;
+	text-align: left;
+}
+
+.cart .product-price,
+.cart .product-quantity {
+	text-align: center;
+}
+
+.cart .product-quantity label {
+	display: none;
+}
+
+.product-subtotal {
+	text-align: right;
+}
+
+.cart-footer {
+	display: flex;
+	justify-content: space-between;
+	padding-top: $base;
+}
+
+.cart-coupon {
+	width: 400px;
+	position: relative;
+}
+
+.cart-coupon .input-text {
+	height: 48px;
+}
+
+.cart-coupon .button {
+	@include btn__navy;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.cart_totals  {
+	position: relative;
+	padding: 20px 20px 80px;
+	border: 1px solid $grey;
+}
+
+.cart_totals h2 {
+	margin-bottom: $base;
+	text-align: center;
+	font-weight: $weight-medium;
+
+  @include bp-min-width($medium) {
+    @include font-size(18px);
+  }
+}
+
+.cart-collaterals th {
+	padding: 4px 0;
+	text-align: left;
+}
+
+.cart-collaterals td {
+	padding: 4px 0;
+	text-align: right;
+}
+
+.order-total {
+	font-weight: $weight-medium;
+}
+
+.checkout-button {
+	@include btn__solid-navy;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	&:hover {
+		background: #fff;
+	}
+}

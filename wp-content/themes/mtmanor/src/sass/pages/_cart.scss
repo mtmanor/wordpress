@@ -48,9 +48,11 @@
 }
 
 .product-list-table .product-remove {
-	position: absolute;
-	top: 0;
-	left: 0;
+	@include bp-max-width($medium) {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 }
 
 .product-price:before,
@@ -122,10 +124,12 @@
 }
 
 .product-list-table .product-name {
+	text-align: left;
+}
+
+.product-list-table td.product-name {
 	@include font-size(18px);
 	font-weight: $weight-medium;
-	text-align: left;
-
 	@include bp-max-width($large) {
 		padding-left: 0;
 	}

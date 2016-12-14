@@ -5,14 +5,24 @@
 				<div class="bottom-content--newsletter col-1-2">
 					<div class="bottom-content--wrapper">
 						<h3 class="title__h1">Nyheter &amp; Erbjudanden</h3>
-						<form class="newsletter-form">
-							<input type="email" placeholder="Din mailadress här" class="newsletter-form--input" />
-							<button class="newsletter-form--btn">
+
+						<form action="//mtmanor.us7.list-manage.com/subscribe/post?u=3d20dc6c3446c6da5609fbdc4&amp;id=a262694fac" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="newsletter-form validate" target="_blank" novalidate>
+							<input type="email" value="" name="EMAIL" placeholder="Din mailadress här" class="newsletter-form--input required email" id="mce-EMAIL">
+							<div id="mce-responses" class="clear">
+								<div class="response" id="mce-error-response" style="display:none"></div>
+								<div class="response" id="mce-success-response" style="display:none"></div>
+							</div>
+							<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+					    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+								<input type="text" name="b_3d20dc6c3446c6da5609fbdc4_a262694fac" tabindex="-1" value="">
+							</div>
+							<button type="submit" value="Subscribe" name="subscribe" class="newsletter-form--btn">
 								<svg class="icon-arrow-right">
 									<use xlink:href="#icon-arrow-right"></use>
 								</svg>
 							</button>
 						</form>
+
 					</div>
 				</div>
 				<div class="bottom-content--generic col-1-2">

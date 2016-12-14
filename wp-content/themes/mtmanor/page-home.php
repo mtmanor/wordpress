@@ -105,5 +105,4 @@ if( have_rows('home_hero') ): ?>
 	</div>
 </section>
 
-
 <?php get_footer(); ?>

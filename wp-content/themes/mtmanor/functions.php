@@ -15,7 +15,7 @@ function mtm_load_scripts() {
 	global $post;
 	$pid = is_singular() ? $post->ID : null;
 
-	$deps = array('jquery', 'bxslider');
+	$deps = array('jquery');
 
 	wp_enqueue_script( 'jquery' );
 
@@ -26,15 +26,6 @@ function mtm_load_scripts() {
 		ENQUEUE_VERSION
 	);
 	wp_enqueue_script('modernizr');
-
-	// bxSlider
-	wp_register_script('bxslider',
-		get_bloginfo('template_url') . '/dist/js/jquery.bxslider.min.js',
-		array(),
-		ENQUEUE_VERSION,
-		true
-	);
-	wp_enqueue_script('bxslider');
 
 	// clamp
 	wp_register_script('clamp',
@@ -251,8 +242,17 @@ function mtm_change_breadcrumb_wrapper( $defaults ) {
 	return $defaults;
 }
 
+
 // Update Sale Label
 add_filter( 'woocommerce_sale_flash', 'mtm_custom_replace_sale_text' );
 function mtm_custom_replace_sale_text( $html ) {
   return str_replace( __( 'Sale!', 'woocommerce' ), __( 'Sale', 'woocommerce' ), $html );
 }
+
+
+// Empty Cart: Return to Shop URL Update
+function wc_empty_cart_redirect_url() {
+	return '/';
+	// return $_SERVER['HTTP_REFERER'];
+}
+add_filter( 'woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url' );

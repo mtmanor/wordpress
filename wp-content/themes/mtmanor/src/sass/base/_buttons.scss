@@ -72,6 +72,16 @@ a {
   }
 }
 
+@mixin btn__solid-grey {
+  border-color: $grey;
+  background: $grey;
+  color: $navy;
+
+  &:hover {
+    border-color: $navy;
+  }
+}
+
 .btn__navy {
   @include btn__navy;
 }
@@ -86,6 +96,10 @@ a {
 
 .btn__solid-navy {
   @include btn__solid-navy;
+}
+
+.btn__solid-grey {
+  @include btn__solid-grey;
 }
 
 input[type="submit"],

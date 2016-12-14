@@ -60,8 +60,11 @@
 .product-subtotal:before {
 	@include bp-max-width($medium) {
 		@include vertical-center;
+		@include font-size(13px);
 		display: block;
 		left: 0;
+		font-weight: $weight-medium;
+		text-transform: uppercase;
 	}
 }
 
@@ -152,9 +155,13 @@
 	}
 }
 
-.cart-footer {
-	padding-top: $base;
+td.product-subtotal {
+	@include bp-max-width($medium) {
+		margin-bottom: 30px;
+	}
+}
 
+.cart-footer {
 	@include bp-min-width($medium) {
 		display: flex;
 		justify-content: space-between;
@@ -184,7 +191,7 @@
 }
 
 .cart-coupon .button {
-	@include btn__navy;
+	@include btn__solid-navy;
 
 	@include bp-max-width($medium) {
 		width: 100%;
@@ -239,7 +246,7 @@
 }
 
 .checkout-button {
-	@include btn__salmon;
+	@include btn__solid-salmon;
 	width: 100%;
 }
 

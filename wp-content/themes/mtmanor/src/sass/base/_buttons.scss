@@ -72,6 +72,17 @@ a {
   }
 }
 
+@mixin btn__solid-salmon {
+  border-color: $salmon;
+  background: $salmon;
+  color: $navy;
+
+  &:hover {
+    background: transparent;
+    color: $salmon;
+  }
+}
+
 @mixin btn__solid-grey {
   border-color: $grey;
   background: $grey;

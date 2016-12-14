@@ -147,7 +147,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 				<?php } ?>
 
 				<div class="cart-update-btn">
-					<input type="submit" class="btn btn__solid-grey" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" />
+					<input type="submit" class="btn btn__navy" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" />
 				</div>
 
 				<?php do_action( 'woocommerce_cart_actions' ); ?>

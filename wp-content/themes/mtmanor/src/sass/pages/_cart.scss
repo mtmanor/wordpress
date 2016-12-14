@@ -111,7 +111,7 @@
 	transform: rotate(-45deg);
 }
 
-.product-list-table .product-thumbnail {
+.product-list-table td.product-thumbnail {
 	@include bp-max-width($large) {
 		width: 72px;
 		padding: 0;
@@ -119,7 +119,7 @@
 
 	@include bp-min-width($large) {
 		width: 144px;
-		padding: 20px 20px 0;
+		padding: 40px 20px 0;
 	}
 }
 
@@ -158,6 +158,7 @@
 	@include bp-min-width($medium) {
 		display: flex;
 		justify-content: space-between;
+		padding-top: $base*2;
 	}
 }
 
@@ -169,10 +170,12 @@
 	@include bp-min-width($medium) {
 		position: relative;
 		width: 400px;
+		padding-right: 180px;
 	}
 }
 
 .cart-coupon .input-text {
+	border: 2px solid $navy;
 	height: 48px;
 
 	@include bp-max-width($medium) {
@@ -202,8 +205,9 @@
 
 .cart_totals  {
 	position: relative;
-	padding: 20px 20px 80px;
-	border: 1px solid $grey;
+	padding: 20px;
+	background: $navy;
+	color: #fff;
 }
 
 .cart_totals h2 {
@@ -230,16 +234,13 @@
 	font-weight: $weight-medium;
 }
 
-.checkout-button {
-	@include btn__solid-navy;
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 0;
+.wc-proceed-to-checkout {
+	padding-top: $base;
+}
 
-	&:hover {
-		background: #fff;
-	}
+.checkout-button {
+	@include btn__salmon;
+	width: 100%;
 }
 
 .cart-empty {

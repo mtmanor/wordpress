@@ -39,10 +39,5 @@
 }
 
 .footer-nav ul {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.footer-nav li {
-	width: 50%;
+	column-count: 2;
 }

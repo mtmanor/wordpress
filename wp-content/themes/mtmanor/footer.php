@@ -51,15 +51,7 @@
 				<p>Mt. Manor säljer noggrant utvalda livsstilsprylar och accessoarer. Vi brinner för tidlös design, hög kvalitet och hållbara material.</p>
 			</div>
 			<nav class="footer-nav col-1-2">
-				<ul>
-					<li><a href="">Väskor</a></li>
-					<li><a href="">Om oss</a></li>
-					<li><a href="">Klockor</a></li>
-					<li><a href="">Köpvillkor</a></li>
-					<li><a href="">Fodral</a></li>
-					<li><a href="">Kontakt</a></li>
-					<li><a href="">Accessoarer</a></li>
-				</ul>
+				<?php wp_nav_menu( array('menu'=>'Footer menu', 'container'=>'') ); ?>
 			</nav>
 		</div>
 

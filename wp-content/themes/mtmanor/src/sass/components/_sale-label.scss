@@ -10,3 +10,9 @@
   font-weight: $weight-medium;
   text-transform: uppercase;
 }
+
+.product .onsale {
+  @include bp-max-width($large) {
+    left: 20px;
+  }
+}

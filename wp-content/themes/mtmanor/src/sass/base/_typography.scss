@@ -92,6 +92,9 @@ ins {
 .body-content p,
 .body-content ul,
 .body-content ol {
+  @include bp-min-width($medium) {
+    @include font-size(18px);
+  }
 }
 
 .body-content p:not(:last-child),

@@ -55,9 +55,9 @@
 	}
 }
 
-.product-price:before,
-.product-quantity:before,
-.product-subtotal:before {
+.product-list-table .product-price:before,
+.product-list-table .product-quantity:before,
+.product-list-table .product-subtotal:before {
 	@include bp-max-width($medium) {
 		@include vertical-center;
 		@include font-size(13px);
@@ -68,13 +68,13 @@
 	}
 }
 
-.product-price:before {
+.product-list-table .product-price:before {
 	@include bp-max-width($medium) {
 		content: 'Price';
 	}
 }
 
-.product-quantity:before {
+.product-list-table .product-quantity:before {
 	@include bp-max-width($medium) {
 		content: 'Quantity';
 	}

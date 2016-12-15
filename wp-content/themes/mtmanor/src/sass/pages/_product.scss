@@ -57,9 +57,18 @@
 }
 
 .product-details .product-price {
+	display: flex;
+	align-items: baseline;
 	margin-bottom: 30px;
 	color: $salmon;
 	line-height: 1.166;
+}
+
+.product-details .product-price del {
+	@include font-size(24px);
+	order: 1;
+	margin-left: 20px;
+	color: $md-grey;
 }
 
 .product-cart-form  {

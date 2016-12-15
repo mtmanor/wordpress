@@ -213,8 +213,7 @@ td.product-subtotal {
 .cart_totals  {
 	position: relative;
 	padding: 20px;
-	background: $navy;
-	color: #fff;
+	border: 1px solid $grey;
 }
 
 .cart_totals h2 {
@@ -246,7 +245,7 @@ td.product-subtotal {
 }
 
 .checkout-button {
-	@include btn__solid-salmon;
+	@include btn__solid-navy;
 	width: 100%;
 }
 

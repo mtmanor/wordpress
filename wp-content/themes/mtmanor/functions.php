@@ -218,10 +218,23 @@ add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loo
 // Update Loop Product Title
 remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
 function mtm_template_loop_product_title() {
-	$title = get_the_title();
-	echo '<h2 class="product-grid--product-title">' . $title . '</h2>';
+	global $product;
+	$product_brand = $product->get_attribute( 'brand' );
+	$product_name = $product->get_attribute( 'name' );
+	$product_type = $product->get_attribute( 'type' );
+	$product_color = $product->get_attribute( 'color' );
+
+	if ($product_brand && $product_name) {
+		echo '<h2 class="product-grid--product-title">';
+		echo '<span class="product-title__name">' . $product_brand . ' ' . $product_name . '</span>';
+		echo '<span class="product-title__type">' . $product_type . ' - ' . $product_color . '</span>';
+		echo '</h2>';
+	} else {
+		the_title( '<h2 class="product-grid--product-title">', '</h2>' );
+	}
 }
 add_action( 'woocommerce_shop_loop_item_title', 'mtm_template_loop_product_title', 10 );
+
 
 
 // Move Category Breadcrumbs

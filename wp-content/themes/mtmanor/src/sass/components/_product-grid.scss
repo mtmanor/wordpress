@@ -90,3 +90,9 @@
 .product-grid--product-price {
 	@include font-size(18px);
 }
+
+.woocommerce-info {
+	@include font-size(18px);
+	margin-bottom: $base*4;
+	text-align: center;
+}

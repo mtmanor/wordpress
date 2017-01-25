@@ -160,7 +160,7 @@ function woo_remove_product_tabs( $tabs ) {
 // Display Woocommerce Product Description in place of Summary
 function woocommerce_template_product_description() {
 	wc_get_template( 'single-product/tabs/description.php' );
-	wc_get_template( 'single-product/tabs/additional-information.php' );
+	// wc_get_template( 'single-product/tabs/additional-information.php' );
 }
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_product_description', 20 );
 
@@ -247,6 +247,35 @@ function mtm_change_breadcrumb_wrapper( $defaults ) {
 add_filter( 'woocommerce_sale_flash', 'mtm_custom_replace_sale_text' );
 function mtm_custom_replace_sale_text( $html ) {
   return str_replace( __( 'Sale!', 'woocommerce' ), __( 'Sale', 'woocommerce' ), $html );
+}
+
+
+// Product Stock Message
+add_filter( 'woocommerce_get_availability', 'mtm_custom_get_availability', 1, 2);
+function mtm_custom_get_availability( $availability, $_product ) {
+	global $product;
+
+	// Change In Stock Text
+	if ( $_product->is_in_stock() ) {
+    $availability['availability'] = __('', 'woocommerce');
+	}
+
+	// Change One Left Text
+	if ( $_product->is_in_stock() && $product->get_stock_quantity() == 1 ) {
+		$availability['availability'] = sprintf( __('Last one in stock', 'woocommerce'), $product->get_stock_quantity());
+	}
+
+	// Change Backorder Text
+	if ( $_product->is_in_stock() && $product->get_stock_quantity() == 0 ) {
+		$availability['availability'] = sprintf( __('Delivered in 7 - 10 days', 'woocommerce'), $product->get_stock_quantity());
+	}
+
+	// Change Out of Stock Text
+	if ( ! $_product->is_in_stock() ) {
+		$availability['availability'] = __('Sold Out', 'woocommerce');
+	}
+
+	return $availability;
 }
 
 

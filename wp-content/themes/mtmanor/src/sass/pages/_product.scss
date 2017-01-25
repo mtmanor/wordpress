@@ -55,6 +55,10 @@
 	line-height: 1.166;
 }
 
+.product-title__name {
+	display: block;
+}
+
 .product-details .product-price {
 	display: flex;
 	align-items: baseline;
@@ -77,6 +81,10 @@
 		@include font-size(24px);
 		margin-left: 20px;
 	}
+}
+
+.product-details .stock {
+	margin-bottom: 12px;
 }
 
 .product-cart-form  {

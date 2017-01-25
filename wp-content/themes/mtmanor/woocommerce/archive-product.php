@@ -39,7 +39,14 @@ get_header( 'shop' ); ?>
 
 				<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 
-					<h1 class="title__h1"><?php woocommerce_page_title(); ?></h1>
+					<?php
+					$queried_object = get_queried_object();
+					$custom_page_title = get_field('custom_page_title', $queried_object);
+					if ($custom_page_title): ?>
+						<h1 class="title__h1"><?php echo $custom_page_title; ?></h1>
+					<?php else: ?>
+						<h1 class="title__h1"><?php woocommerce_page_title(); ?></h1>
+					<?php endif; ?>
 
 				<?php endif; ?>
 

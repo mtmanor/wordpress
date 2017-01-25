@@ -26,11 +26,13 @@ $product_name = $product->get_attribute( 'name' );
 $product_type = $product->get_attribute( 'type' );
 $product_color = $product->get_attribute( 'color' );
 
-echo '<h1 itemprop="name" class="product-title title__h1">';
-echo '<span class="product-title__name">' . $product_brand . ' ' . $product_name . '</span>';
-echo '<span class="product-title__type">' . $product_type . ' - ' . $product_color . '</span>';
-echo '</h1>';
+if ($product_brand && $product_name) {
+	echo '<h1 itemprop="name" class="product-title title__h1">';
+	echo '<span class="product-title__name">' . $product_brand . ' ' . $product_name . '</span>';
+	echo '<span class="product-title__type">' . $product_type . ' - ' . $product_color . '</span>';
+	echo '</h1>';
+} else {
+	the_title( '<h1 itemprop="name" class="product-title title__h1">', '</h1>' );
+}
 
 // var_dump($product);
-
-// the_title( '<h1 itemprop="name" class="product-title title__h1">', '</h1>' );

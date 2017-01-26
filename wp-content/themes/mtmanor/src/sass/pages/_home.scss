@@ -12,12 +12,14 @@
 	justify-content: center;
 	align-items: center;
 	height: 400px;
+	padding-left: 28px;
+	padding-right: 28px;
 	background-color: $navy;
 	background-size: cover;
 
 	@include bp-min-width($medium) {
-		padding-left: 40px;
-		padding-right: 40px;
+		padding-left: 56px;
+		padding-right: 56px;
 	}
 
 	@include bp-min-width($medium) {
@@ -97,6 +99,8 @@
 	justify-content: center;
 	align-items: center;
 	height: 436px;
+	padding-right: 28px;
+	padding-left: 28px;
 	background: $grey;
 	background-repeat: no-repeat;
 	background-position: center;

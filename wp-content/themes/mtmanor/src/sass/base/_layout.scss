@@ -1,6 +1,8 @@
 
 .js-no-scroll {
-  overflow: hidden;
+  @include bp-max-width($large) {
+    overflow: hidden;
+  }
 }
 
 .main {

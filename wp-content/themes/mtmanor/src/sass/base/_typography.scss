@@ -66,6 +66,8 @@ ins {
 }
 
 .title__h5 {
+  font-weight: $weight-medium;
+
   @include bp-min-width($medium) {
     @include font-size(16px);
   }

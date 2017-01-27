@@ -78,17 +78,34 @@ get_header( 'shop' ); ?>
 
 					</div>
 
-					<?php woocommerce_product_loop_start(); ?>
+					<div class="products-list">
 
-						<?php woocommerce_product_subcategories(); ?>
+						<?php
+							/**
+							 * woocommerce_sidebar hook.
+							 *
+							 * @hooked woocommerce_get_sidebar - 10
+							 */
+							do_action( 'woocommerce_sidebar' );
+						?>
 
-						<?php while ( have_posts() ) : the_post(); ?>
+						<div class="product-grid-container">
 
-							<?php wc_get_template_part( 'content', 'product' ); ?>
+							<?php woocommerce_product_loop_start(); ?>
 
-						<?php endwhile; // end of the loop. ?>
+								<?php woocommerce_product_subcategories(); ?>
 
-					<?php woocommerce_product_loop_end(); ?>
+								<?php while ( have_posts() ) : the_post(); ?>
+
+									<?php wc_get_template_part( 'content', 'product' ); ?>
+
+								<?php endwhile; // end of the loop. ?>
+
+							<?php woocommerce_product_loop_end(); ?>
+
+						</div>
+
+					</div>
 
 					<?php
 						/**
@@ -112,15 +129,6 @@ get_header( 'shop' ); ?>
 				 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
 				 */
 				do_action( 'woocommerce_after_main_content' );
-			?>
-
-			<?php
-				/**
-				 * woocommerce_sidebar hook.
-				 *
-				 * @hooked woocommerce_get_sidebar - 10
-				 */
-				do_action( 'woocommerce_sidebar' );
 			?>
 
 		</div>

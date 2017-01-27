@@ -18,3 +18,23 @@
   color: #fff;
   font-weight: $weight-medium;
 }
+
+.sidebar-nav {
+  line-height: 1.666;
+
+  @include bp-min-width($medium) {
+    width: 276px;
+  }
+}
+
+.sidebar-nav .title__h5 {
+  line-height: 1.666;
+}
+
+.sidebar-nav a {
+  display: block;
+
+  &:hover {
+    color: $salmon;
+  }
+}

@@ -172,12 +172,23 @@
 	width: 100%;
 }
 
+.related-products .product-grid--item {
+	@include bp-max-width($medium) {
+		width: 100%;
+	}
+
+	@include bp-min-width($medium) {
+		width: 25%;
+		padding-left: 14px;
+		padding-right: 14px;
+	}
+}
+
 .product-cart-form .button {
 	@include bp-max-width($medium) {
 		width: 100%;
 	}
 }
-
 
 .more-from .container {
 	@include bp-min-width($medium) {

@@ -53,6 +53,11 @@
   }
 }
 
+.main-nav .menu .current-menu-item > a,
+.main-nav .menu .current-menu-parent > a {
+  color: $salmon;
+}
+
 .main-nav .menu > li > a:before {
   @include bp-max-width($large) {
     @include vertical-center;

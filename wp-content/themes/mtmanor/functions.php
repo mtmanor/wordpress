@@ -192,7 +192,7 @@ remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_ad
 remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
 function mtm_template_loop_product_link_open() {
 	$link = get_permalink();
-	echo '<a href="' . $link . '" class="product-grid--item col-1-4">';
+	echo '<a href="' . $link . '" class="product-grid--item">';
 	echo '<div class="product-grid--item-wrapper">';
 }
 add_action( 'woocommerce_before_shop_loop_item', 'mtm_template_loop_product_link_open', 10 );

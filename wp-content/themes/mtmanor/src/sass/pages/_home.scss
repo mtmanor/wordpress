@@ -69,12 +69,20 @@
 	}
 }
 
-.recommended-grid {
-	margin-bottom: $base*2;
-}
+.recommended-grid .product-grid--item {
+	@include bp-max-width($medium) {
+    width: 100%;
+  }
 
-.recommended-grid--item {
-	display: block;
+	@include bp-min-width($medium) {
+		width: 50%;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  @include bp-min-width($large) {
+		width: 25%;
+  }
 }
 
 .recommended-grid--title {

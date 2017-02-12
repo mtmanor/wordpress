@@ -83,7 +83,7 @@ if( have_rows('home_hero') ): ?>
 	<div class="recommended-products--wrapper">
 		<div class="container">
 
-			<div class="product-grid flex-grid">
+			<div class="product-grid recommended-grid flex-grid">
 				<?php
 					$args = array(
 						'post_type' => 'product',

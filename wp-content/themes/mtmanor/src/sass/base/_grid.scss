@@ -1,13 +1,18 @@
 
+.flex-row,
 .flex-grid {
   display: flex;
-  flex-wrap: wrap;
 
   @include bp-min-width($medium) {
     margin: 0 -14px;
   }
 }
 
+.flex-grid {
+  flex-wrap: wrap;
+}
+
+.flex-row [class*='col-'],
 .flex-grid [class*='col-'] {
   @include bp-max-width($medium) {
     width: 100%;
@@ -16,21 +21,6 @@
   @include bp-min-width($medium) {
     padding-left: 14px;
     padding-right: 14px;
-  }
-}
-
-.row {
-  @include cf;
-  margin: 0 -20px;
-}
-
-.row [class*='col-'] {
-  padding: 0 20px;
-}
-
-.row [class*='col-'] {
-  @include bp-min-width($medium) {
-    float: left;
   }
 }
 

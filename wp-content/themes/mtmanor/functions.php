@@ -207,12 +207,39 @@ function mtm_template_loop_product_link_close() {
 add_action( 'woocommerce_after_shop_loop_item', 'mtm_template_loop_product_link_close', 5 );
 
 
+// Update Category Loop Link Open
+remove_action( 'woocommerce_before_subcategory', 'woocommerce_template_loop_category_link_open', 10 );
+function mtm_template_template_loop_category_link_open( $category ) {
+	$link = get_term_link( $category->term_id, 'product_cat' );
+	echo '<a href="' . $link . '" class="product-grid--item">';
+	echo '<div class="product-grid--item-wrapper">';
+}
+add_action( 'woocommerce_before_subcategory', 'mtm_template_template_loop_category_link_open', 10 );
+
+
+// Update Category Loop Link Close
+remove_action( 'woocommerce_after_subcategory', 'woocommerce_template_loop_category_link_close', 5 );
+function mtm_template_loop_category_link_close( $category ) {
+	echo '</div>';
+	echo '</a>';
+}
+add_action( 'woocommerce_after_subcategory', 'mtm_template_loop_category_link_close', 5 );
+
+
 // Loop Product Thumb Wrapper
 remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
-function woocommerce_template_loop_product_thumbnail() {
+function woocommerce_template_loop_product_thumbnail( $category ) {
 	echo '<div class="product-grid--thumb">' . woocommerce_get_product_thumbnail() . '</div>';
 }
 add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
+
+
+// Category Loop Product Thumb Wrapper
+remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10);
+function woocommerce_subcategory_thumbnail() {
+	echo '<div class="product-grid--thumb">' . woocommerce_get_product_thumbnail() . '</div>';
+}
+add_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10);
 
 
 // Update Loop Product Title
@@ -235,6 +262,19 @@ function mtm_template_loop_product_title() {
 }
 add_action( 'woocommerce_shop_loop_item_title', 'mtm_template_loop_product_title', 10 );
 
+
+// Update Category Loop Product Title
+remove_action( 'woocommerce_shop_loop_subcategory_title', 'woocommerce_template_loop_category_title', 10 );
+function mtm_template_loop_category_title( $category ) {
+	echo '<h2 class="product-grid--category-title title__h2">' . $category->name . '</h2>';
+}
+add_action( 'woocommerce_shop_loop_subcategory_title', 'mtm_template_loop_category_title', 10 );
+
+
+// Remove Category Loop Title Count
+add_filter( 'woocommerce_subcategory_count_html', 'mtm_hide_category_count' );
+function mtm_hide_category_count() {
+}
 
 
 // Move Category Breadcrumbs

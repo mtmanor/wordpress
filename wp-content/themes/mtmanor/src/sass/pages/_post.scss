@@ -4,8 +4,41 @@
 	margin: 0 auto $base*3;
 }
 
+.post-header {
+	max-width: 620px;
+	margin: 0 auto;
+	padding: $base 0;
+	text-align: center;
+
+	@include bp-min-width($medium) {
+		padding-top: $base*2;
+		padding-bottom: $base*2;
+	}
+
+	@include bp-min-width($large) {
+		padding-top: $base*3;
+		padding-bottom: $base*3;
+	}
+}
+
+.post-title + p {
+	padding-top: $base;
+}
+
+.post-meta {
+	@include font-size(14px);
+}
+
+.post-meta a {
+	color: $salmon;
+
+	&:hover {
+		color: $navy;
+	}
+}
+
 .post-content {
-	max-width: 700px;
+	max-width: 620px;
 	margin: 0 auto;
 	padding-bottom: $base*4;
 }

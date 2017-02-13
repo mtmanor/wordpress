@@ -1,13 +1,17 @@
 
 .post-hero {
 	max-width: 960px;
-	margin: 0 auto $base*3;
+	margin: 0 auto $base;
+
+	@include bp-min-width($medium) {
+		margin-bottom: $base*3;
+	}
 }
 
 .post-header {
 	max-width: 620px;
 	margin: 0 auto;
-	padding: $base 0;
+	padding: $base 20px;
 	text-align: center;
 
 	@include bp-min-width($medium) {
@@ -40,5 +44,15 @@
 .post-content {
 	max-width: 620px;
 	margin: 0 auto;
-	padding-bottom: $base*4;
+	padding-bottom: $base*2;
+
+	@include bp-max-width($large) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @include bp-min-width($large) {
+    width: 94%;
+		padding-bottom: $base*4;
+  }
 }

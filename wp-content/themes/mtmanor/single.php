@@ -24,6 +24,77 @@
 			<?php the_content(); ?>
 		</div>
 
+    <?php $steps_title = get_field('steps_title'); ?>
+    <?php if ($steps_title): ?>
+      <section class="guide-steps">
+        <div class="container">
+          <h2 class="guide-steps--title title__h1"><?php echo $steps_title; ?></h2>
+
+          <?php if( have_rows('steps') ): ?>
+            <div class="steps-list">
+            	<?php while( have_rows('steps') ): the_row(); ?>
+                <div class="steps-list--item">
+                  <div class="steps-list--thumb">
+                    <?php
+                    $imageID = get_sub_field('step_image');
+                    echo $image;
+                    $src = wp_get_attachment_image_src($imageID, 'guide-thumb');
+                    $srcset = wp_get_attachment_image_srcset($imageID, 'guide-thumb'); ?>
+                    <img src="<?=$src[0]?>" srcset="<?=$srcset?>" />
+                  </div>
+                  <div class="steps-list--description">
+                    <?php the_sub_field('step_description'); ?>
+                  </div>
+                </div>
+              <?php endwhile; ?>
+            </div>
+          <?php endif; ?>
+
+        </div>
+      </section>
+    <?php endif; ?>
+
 <?php endwhile; endif; ?>
+
+<section class="recent-news">
+	<div class="container">
+		<h2 class="section-title title__h1">Nyheter</h2>
+
+		<?php
+		$args = array(
+			'post_type' => 'post',
+			'posts_per_page' => 3
+		);
+		$wp_query = new WP_Query( $args ); ?>
+
+		<?php if ( $wp_query->have_posts() ) : ?>
+			<div class="post-grid flex-grid">
+				<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+
+					<article class="post-grid--item col-1-3">
+	          <div class="post-grid--thumb">
+							<?php
+							$attachmentID = get_post_thumbnail_id();
+							if ($attachmentID):
+							$src = wp_get_attachment_image_src($attachmentID, 'post-grid-thumb');
+							$srcset = wp_get_attachment_image_srcset($attachmentID, 'post-grid-thumb'); ?>
+								<a href="<?php the_permalink(); ?>"><img src="<?=$src[0]?>" srcset="<?=$srcset?>" /></a>
+							<?php else: ?>
+								<img src="<?php echo get_template_directory_uri(); ?>/dist/images/post-thumb-mtm-mark.png" title="<?php echo the_title(); ?>" />
+							<?php endif; ?>
+	          </div>
+	          <h3 class="post-grid--title title__h4"><a href=""><?php the_title(); ?></a></h3>
+	          <!-- <p class="post-grid--sub-title title__h4"><a href="">Hållbart som bara blir bättre</a></p> -->
+	        </article>
+
+				<?php endwhile; ?>
+			</div>
+
+			<?php // numeric_posts_nav(); ?>
+			<?php wp_reset_postdata(); ?>
+		<?php endif; ?>
+
+  </div>
+</section>
 
 <?php get_footer(); ?>

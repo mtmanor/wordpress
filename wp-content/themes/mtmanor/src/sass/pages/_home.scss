@@ -49,10 +49,7 @@
 }
 
 .recommended-products {
-	margin-bottom: $base;
-
 	@include bp-min-width($medium) {
-		margin-bottom: $base*3;
 		padding-top: $base;
 	}
 }

@@ -105,8 +105,9 @@ if( have_rows('home_hero') ): ?>
 	</div>
 </section>
 
-<section class="news">
+<section class="recent-news">
 	<div class="container">
+		<h2 class="section-title title__h1">Nyheter</h2>
 
 		<?php
 		$args = array(
@@ -144,6 +145,5 @@ if( have_rows('home_hero') ): ?>
 
   </div>
 </section>
-
 
 <?php get_footer(); ?>

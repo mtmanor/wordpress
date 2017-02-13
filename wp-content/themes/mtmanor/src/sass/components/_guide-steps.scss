@@ -1,0 +1,56 @@
+
+.guide-steps {
+	background: $grey;
+}
+
+.guide-steps .container {
+	padding-top: $base*2;
+	padding-bottom: $base*2;
+
+	@include bp-min-width($medium) {
+		padding-top: $base*4;
+		padding-bottom: $base*4;
+	}
+}
+
+.guide-steps--title {
+	margin-bottom: $base*2;
+	text-align: center;
+}
+
+.steps-list {
+	max-width: 620px;
+	margin: 0 auto;
+}
+
+.steps-list--item {
+	@include bp-min-width($medium) {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.steps-list--item:not(:last-child) {
+	margin-bottom: $base*2;
+}
+
+.steps-list--thumb {
+	width: 188px;
+
+	@include bp-max-width($medium) {
+		margin: 0 auto $base;
+	}
+}
+
+.steps-list--description {
+	@include font-size(18px);
+
+	@include bp-max-width($medium) {
+		text-align: center;
+	}
+
+	@include bp-min-width($medium) {
+		width: calc(100% - 188px);
+		padding-left: 40px;
+	}
+}

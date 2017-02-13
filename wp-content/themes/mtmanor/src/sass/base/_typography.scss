@@ -37,6 +37,7 @@ ins {
   font-family: $serif;
   font-weight: $weight-regular;
   line-height: 1.25;
+  letter-spacing: 0.02em;
 
   @include bp-min-width($medium) {
     @include font-size(36px);
@@ -47,6 +48,7 @@ ins {
   @include font-size(24px);
   font-family: $serif;
   font-weight: $weight-light;
+  letter-spacing: 0.03em;
 }
 
 .title__h3 {
@@ -90,6 +92,7 @@ ins {
   margin-bottom: $base;
   font-family: $serif;
   line-height: 1.25;
+  letter-spacing: 0.03em;
 
   &:first-child {
     margin-bottom: 42px;

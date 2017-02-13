@@ -105,6 +105,9 @@ function post_navigation() {
 add_image_size( 'post-grid-thumb', 410, 300, true );
 add_image_size( 'post-grid-thumb-2x', 820, 600, true );
 
+add_image_size( 'post-thumb', 403, 286, true );
+add_image_size( 'post-thumb-2x', 806, 572, true );
+
 add_image_size( 'post-hero', 960, 546, true );
 add_image_size( 'post-hero-2x', 1920, 1092, true );
 

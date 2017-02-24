@@ -30,15 +30,15 @@
   &:after {
     content: '';
     position: absolute;
-    top: 20px;
-    width: 8px;
+    top: 21px;
+    width: 9px;
     height: 1px;
     background: $navy;
   }
 
   &:before {
     transform: rotate(45deg);
-    right: 9px;
+    right: 8px;
   }
 
   &:after {

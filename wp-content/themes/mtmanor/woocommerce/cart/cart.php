@@ -27,11 +27,11 @@ do_action( 'woocommerce_before_cart' ); ?>
 <div class="flex-grid">
 	<div class="col-3-4 cart-product-list">
 
-		<form action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
+		<form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 
 		<?php do_action( 'woocommerce_before_cart_table' ); ?>
 
-		<table class="shop_table shop_table_responsive product-list-table" cellspacing="0">
+		<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents product-list-table" cellspacing="0">
 			<thead>
 				<tr>
 					<th class="product-remove">&nbsp;</th>
@@ -53,12 +53,12 @@ do_action( 'woocommerce_before_cart' ); ?>
 					if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 						$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 						?>
-						<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
+						<tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 
 							<td class="product-remove">
 								<?php
 									echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-										'<a href="%s" class="remove" title="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
+										'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
 										esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
 										__( 'Remove this item', 'woocommerce' ),
 										esc_attr( $product_id ),
@@ -138,10 +138,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 			<footer class="cart-footer">
 				<?php if ( wc_coupons_enabled() ) { ?>
 					<div class="cart-coupon">
-
 						<input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" />
 						<input type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply Coupon', 'woocommerce' ); ?>" />
-
 						<?php do_action( 'woocommerce_cart_coupon' ); ?>
 					</div>
 				<?php } ?>

@@ -116,7 +116,6 @@ jQuery(document).ready(function($) {
       productThumbLink.removeClass('is-active');
       $(this).addClass('is-active');
     });
-
   }
 
   stickyHeader();

@@ -80,6 +80,18 @@ select::-ms-expand {
 }
 
 
+/** Checkbox ============**/
+
+.input-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid $navy;
+}
+
+.input-checkbox[checked] {
+  background: $navy;
+}
+
 /** Number Field ============**/
 
 input[type=number]::-webkit-inner-spin-button,

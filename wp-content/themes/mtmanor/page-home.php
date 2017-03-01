@@ -139,7 +139,6 @@ if( have_rows('home_hero') ): ?>
 				<?php endwhile; ?>
 			</div>
 
-			<?php // numeric_posts_nav(); ?>
 			<?php wp_reset_postdata(); ?>
 		<?php endif; ?>
 

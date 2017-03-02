@@ -48,25 +48,23 @@ if( have_rows('home_hero') ): ?>
 
 		<?php
 		if( have_rows('featured_categories') ): ?>
-			<div class="product-grid flex-grid">
-
+			<div class="category-grid flex-grid">
 				<?php
 				while ( have_rows('featured_categories') ) : the_row();
 				$term = get_sub_field('category');
 				$thumbnail_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
-		    $image = wp_get_attachment_url( $thumbnail_id );
-				?>
+		    $image = wp_get_attachment_url( $thumbnail_id ); ?>
 					<a href="<?php echo get_term_link( $term ); ?>" class="product-grid--item col-1-4">
-						<div class="product-grid--item-wrapper">
-							<div class="product-grid--overlay">
-								<h3 class="product-grid--overlay-title title__h2"><?php echo $term->name; ?></h3>
-								<p class="product-grid--overlay-info"><?php echo $term->count; ?> produkter</p>
+						<div class="category-grid--item-wrapper">
+							<div class="category-grid--overlay">
+								<h3 class="category-grid--overlay-title title__h2"><?php echo $term->name; ?></h3>
+								<p class="category-grid--overlay-info"><?php echo $term->count; ?> produkter</p>
 								<span class="btn btn__salmon">Gå direkt</span>
 							</div>
-							<div class="product-grid--thumb">
+							<div class="category-grid--thumb">
 								<img src="<?php echo $image; ?>" />
 							</div>
-							<h3 class="product-grid--category-title title__h2"><?php echo $term->name; ?></h3>
+							<h3 class="category-grid--category-title title__h2"><?php echo $term->name; ?></h3>
 						</div>
 					</a>
 				<?php endwhile; ?>

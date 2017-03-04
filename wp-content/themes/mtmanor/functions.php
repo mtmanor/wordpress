@@ -184,6 +184,10 @@ add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_a
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
 
+// Remove Product Price Zeros
+add_filter( 'woocommerce_price_trim_zeros', '__return_true' );
+
+
 // Remove Main Wrapper
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );

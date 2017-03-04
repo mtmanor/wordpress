@@ -89,8 +89,24 @@
 	}
 }
 
+.product-variations {
+	margin-bottom: $base;
+}
+
+.product-variations label {
+	@include font-size(14px);
+	margin-right: 20px;
+	font-weight: $weight-medium;
+	text-transform: uppercase;
+}
+
+.variation-item {
+	display: flex;
+	align-items: center;
+}
+
 .product-details .stock {
-	margin-bottom: 12px;
+	margin-bottom: $base;
 }
 
 .product-cart-form  {

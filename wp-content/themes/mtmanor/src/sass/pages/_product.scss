@@ -29,6 +29,12 @@
 	}
 }
 
+.product-images--main img {
+	width: auto;
+	height: auto;
+	max-height: 100%;
+}
+
 .product-images--thumbs {
 	display: flex;
 	padding-top: $base;

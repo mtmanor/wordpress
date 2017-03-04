@@ -98,6 +98,9 @@ jQuery(document).ready(function($) {
     var productMainImage = $('.product-images--main .wp-post-image');
     var productMainImageLink = $('.product-images--main');
 
+    productThumbLink.removeClass('is-active');
+    productThumbLink.first().addClass('is-active');
+
     productMainImageLink.bind('click', function(e){
       e.preventDefault();
     });

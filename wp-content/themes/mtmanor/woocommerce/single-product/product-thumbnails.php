@@ -26,7 +26,7 @@ $attachment_ids = $product->get_gallery_attachment_ids();
 
 if ( $attachment_ids ) {
 	$loop 		= 0;
-	$columns 	= apply_filters( 'woocommerce_product_thumbnails_columns', 3 );
+	$columns 	= apply_filters( 'woocommerce_product_thumbnails_columns', 0 );
 	?>
 	<div class="product-images--thumbs">
 		<?php

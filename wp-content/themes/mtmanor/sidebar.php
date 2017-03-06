@@ -19,7 +19,11 @@
 
 		if ( $terms ) {
 			foreach ( $terms as $term ) {
-				echo '<a href="' .  esc_url( get_term_link( $term ) ) . '">';
+				echo '<a href="'.  esc_url( get_term_link( $term ) ) .'"';
+				if ($term == $current_cat) {
+					echo 'class="current-menu-item"';
+				}
+				echo '>';
 				echo $term->name;
 				echo '</a>';
 			}

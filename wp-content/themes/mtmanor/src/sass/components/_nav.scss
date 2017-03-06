@@ -54,7 +54,8 @@
 }
 
 .main-nav .menu .current-menu-item > a,
-.main-nav .menu .current-menu-parent > a {
+.main-nav .menu .current-menu-parent > a,
+.main-nav .menu .current-product_cat-ancestor > a {
   color: $salmon;
 }
 

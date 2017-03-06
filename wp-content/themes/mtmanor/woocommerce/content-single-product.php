@@ -36,6 +36,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 }
 ?>
 
+<?php
+	if ( function_exists('yoast_breadcrumb') ) {
+		yoast_breadcrumb('<nav class="breadcrumb" itemprop="breadcrumb"><div class="container">','</div></nav>');
+	}
+?>
+
 <div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="container">
 		<div class="flex-grid">

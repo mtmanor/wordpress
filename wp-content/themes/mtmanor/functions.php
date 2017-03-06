@@ -167,6 +167,13 @@ function woo_remove_product_tabs( $tabs ) {
 }
 
 
+// add_action( 'after_setup_theme', 'mtm_product_gallery' );
+// function mtm_product_gallery() {
+// 	add_theme_support( 'wc-product-gallery-zoom' );
+// 	add_theme_support( 'wc-product-gallery-lightbox' );
+// 	add_theme_support( 'wc-product-gallery-slider' );
+// }
+
 // Display Woocommerce Product Description in place of Summary
 function woocommerce_template_product_description() {
 	wc_get_template( 'single-product/tabs/description.php' );
@@ -308,6 +315,27 @@ function mtm_change_breadcrumb_wrapper( $defaults ) {
 	$defaults['wrap_after'] = '</div></nav>';
 	return $defaults;
 }
+
+
+// Remove Woo Breadcrumbs from Single Product
+add_action('template_redirect', 'remove_shop_breadcrumbs' );
+function remove_shop_breadcrumbs(){
+	if (is_single()) {
+		remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
+	}
+}
+
+
+// Remove "Products" from Yoast SEO Breadcrumbs
+function mtm_wpseo_breadcrumb_output( $output ){
+  if( is_product() ){
+    $from = '<a href="http://mtmanor.localhost/shop/" rel="v:url" property="v:title">Products</a> /';
+    $to     = '';
+    $output = str_replace( $from, $to, $output );
+  }
+  return $output;
+}
+add_filter( 'wpseo_breadcrumb_output', 'mtm_wpseo_breadcrumb_output' );
 
 
 // Update Sale Label

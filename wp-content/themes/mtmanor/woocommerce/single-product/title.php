@@ -34,5 +34,3 @@ if ($product_brand && $product_name) {
 } else {
 	the_title( '<h1 itemprop="name" class="product-title title__h1">', '</h1>' );
 }
-
-// var_dump($product);

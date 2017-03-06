@@ -329,7 +329,7 @@ function remove_shop_breadcrumbs(){
 // Remove "Products" from Yoast SEO Breadcrumbs
 function mtm_wpseo_breadcrumb_output( $output ){
   if( is_product() ){
-    $from = '<a href="http://mtmanor.localhost/shop/" rel="v:url" property="v:title">Products</a> /';
+    $from = '<a href="'.site_url().'/shop/" rel="v:url" property="v:title">Products</a> /';
     $to     = '';
     $output = str_replace( $from, $to, $output );
   }

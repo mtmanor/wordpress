@@ -7,22 +7,44 @@
 	}
 }
 
+.cart-grid {
+	@include bp-min-width($large) {
+		display: flex;
+		margin: 0 -14px;
+	}
+}
+
+.cart-product-list,
+.cart-collaterals {
+	@include bp-min-width($large) {
+		padding-left: 14px;
+		padding-right: 14px;
+	}
+}
+
+.cart-product-list {
+	@include bp-max-width($large) {
+		margin-bottom: $base;
+	}
+
+	@include bp-min-width($large) {
+		width: 75%;
+		padding-right: 40px;
+	}
+}
+
+.cart-collaterals {
+	@include bp-min-width($large) {
+		width: 25%;
+	}
+}
+
 .cart .woocommerce-message {
 	margin-bottom: $base;
 }
 
 .shop_table {
 	width: 100%;
-}
-
-.col-3-4.cart-product-list {
-	@include bp-max-width($large) {
-		margin-bottom: $base;
-	}
-
-	@include bp-min-width($large) {
-		padding-right: 40px;
-	}
 }
 
 .product-list-table th {
@@ -33,6 +55,7 @@
 	letter-spacing: .05em;
 
 	@include bp-max-width($medium) {
+		display: none;
 		position: absolute;
 		top: -9999em;
 		left: -9999em;
@@ -40,6 +63,8 @@
 }
 
 .product-list-table td {
+	vertical-align: middle;
+
 	@include bp-max-width($medium) {
 		display: block;
 		position: relative;
@@ -47,11 +72,16 @@
 	}
 }
 
-.product-list-table .product-remove {
+.product-list-table tr:last-child td {
+	@include bp-min-width($medium) {
+		padding-bottom: 40px;
+	}
+}
+
+.product-list-table td.product-remove {
 	@include bp-max-width($medium) {
-		position: absolute;
-		top: 0;
-		left: 0;
+		float: right;
+		padding-top: $base;
 	}
 }
 
@@ -103,7 +133,7 @@
 	left: 0;
 	width: 20px;
 	height: 2px;
-	background: $navy;
+	background: $md-grey;
 }
 
 .product-remove a:before {
@@ -115,14 +145,22 @@
 }
 
 .product-list-table td.product-thumbnail {
-	@include bp-max-width($large) {
+	@include bp-max-width($medium) {
 		width: 72px;
 		padding: 0;
 	}
 
-	@include bp-min-width($large) {
+	@include bp-min-width($medium) {
 		width: 144px;
-		padding: 40px 20px 0;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+.product-list-table tr:nth-child(2n+1) td.product-thumbnail {
+	@include bp-min-width($medium) {
+		padding-top: 40px;
+		padding-bottom: 40px;
 	}
 }
 
@@ -133,8 +171,13 @@
 .product-list-table td.product-name {
 	@include font-size(18px);
 	font-weight: $weight-medium;
+
 	@include bp-max-width($large) {
 		padding-left: 0;
+	}
+
+	@include bp-min-width($medium) {
+		padding-right: 20px;
 	}
 }
 
@@ -142,6 +185,12 @@
 .product-list-table .product-quantity {
 	@include bp-min-width($medium) {
 		text-align: center;
+	}
+}
+
+.product-list-table .product-price {
+	@include bp-min-width($large) {
+		width: 120px;
 	}
 }
 
@@ -165,7 +214,10 @@ td.product-subtotal {
 	@include bp-min-width($medium) {
 		display: flex;
 		justify-content: space-between;
-		padding-top: $base*2;
+	}
+
+	@include bp-min-width($large) {
+		padding-top: $base;
 	}
 }
 
@@ -245,7 +297,7 @@ td.product-subtotal {
 }
 
 .checkout-button {
-	@include btn__solid-navy;
+	@include btn__solid-salmon;
 	width: 100%;
 }
 

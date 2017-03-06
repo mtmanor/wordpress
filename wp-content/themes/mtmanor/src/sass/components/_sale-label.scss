@@ -4,15 +4,18 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+  z-index: 10;
 	padding: 2px 12px;
 	background: $navy;
 	color: #fff;
   font-weight: $weight-medium;
   text-transform: uppercase;
+
 }
 
-.product .onsale {
-  @include bp-max-width($large) {
-    left: 20px;
+.product-grid--thumb .onsale {
+  @include bp-min-width($small) {
+    top: -10px;
+    left: -20px;
   }
 }

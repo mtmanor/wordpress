@@ -24,8 +24,8 @@ wc_print_notices();
 
 do_action( 'woocommerce_before_cart' ); ?>
 
-<div class="flex-grid">
-	<div class="col-3-4 cart-product-list">
+<div class="cart-grid">
+	<div class="cart-product-list">
 
 		<form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 
@@ -161,7 +161,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 		</form>
 	</div>
 
-	<div class="col-1-4 cart-collaterals">
+	<div class="cart-collaterals">
 
 		<?php do_action( 'woocommerce_cart_collaterals' ); ?>
 

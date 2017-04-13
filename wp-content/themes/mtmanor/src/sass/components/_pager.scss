@@ -1,15 +1,25 @@
 
-.pager {
+.woocommerce-pagination {
+	padding-bottom: $base;
+
+	@include bp-min-width($medium) {
+		padding-left: 220px;
+		padding-top: $base;
+		padding-bottom: $base*2;
+	}
+}
+
+.page-numbers {
 	display: flex;
-	justify-content: flex-start;
+	justify-content: center;
 	align-items: center;
 }
 
-.pager-item:not(:last-child) {
+.page-numbers li:not(:last-child) {
 	margin-right: 20px;
 }
 
-.pager-item__current {
+.page-numbers .current {
 	color: $salmon;
 }
 

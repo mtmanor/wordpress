@@ -118,7 +118,7 @@
 	line-height: 1.25;
 
 	@include bp-max-width($small) {
-		@include font-size(12px);
+		@include font-size(14px);
 		margin-bottom: 6px;
 	}
 }
@@ -127,8 +127,10 @@
 	font-weight: $weight-regular;
 }
 
-.product-grid--product-price {
-	@include font-size(18px);
+.product-grid .price {
+	@include bp-max-width($small) {
+		@include font-size(14px);
+	}
 }
 
 .woocommerce-info {

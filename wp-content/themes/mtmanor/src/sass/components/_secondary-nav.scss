@@ -2,26 +2,96 @@
 .sidebar-nav {
   line-height: 1.666;
 
+  @include bp-max-width($medium) {
+    position: absolute;
+    right: 0;
+    top: -66px;
+    z-index: 10;
+    width: 50%;
+    margin-bottom: $base;
+    padding-left: 10px;
+  }
+
   @include bp-min-width($medium) {
     width: 220px;
   }
 }
 
-.sidebar-nav .title__h5 {
+.sidebar-nav--title {
+  position: relative;
   line-height: 1.666;
+
+  @include bp-max-width($medium) {
+    @include font-size(14px);
+    transition: all .1s ease-in;
+    display: inline-block;
+    width: 100%;
+    padding: 12px 20px;
+    background: none;
+    border: 1px solid $navy;
+    line-height: 1;
+    font-weight: $weight-regular;
+    cursor: pointer;
+  }
+
+  &:before,
+  &:after {
+    @include bp-max-width($medium) {
+      content: '';
+      position: absolute;
+      top: 21px;
+      width: 9px;
+      height: 1px;
+      background: $navy;
+    }
+  }
+
+  &:before {
+    @include bp-max-width($medium) {
+      transform: rotate(45deg);
+      right: 24px;
+    }
+  }
+
+  &:after {
+    @include bp-max-width($medium) {
+      transform: rotate(-45deg);
+      right: 18px;
+    }
+  }
 }
 
 .sidebar-nav a {
   display: block;
 
-  &:hover,
-  &.current-menu-item {
-    color: $salmon;
+  @include bp-max-width($medium) {
+    padding: 0 20px;
+    color: #fff;
   }
 }
 
+.sidebar-nav a:first-child {
+  @include bp-max-width($medium) {
+    padding-top: 12px;
+  }
+}
+
+.sidebar-nav a:last-child {
+  @include bp-max-width($medium) {
+    padding-bottom: 12px;
+  }
+}
+
+.sidebar-nav a:hover,
 .sidebar-nav .current-menu-item {
   color: $salmon;
+}
+
+.sidebar-nav--categories {
+  @include bp-max-width($medium) {
+    display: none;
+    background: $navy;
+  }
 }
 
 .secondary-nav {

@@ -84,12 +84,13 @@ jQuery(document).ready(function($) {
   }
 
   var productFilterToggle = function() {
-    var productFilterTrigger = $('.product-filter-toggle');
-    var productFilterCategories = $('.product-filter-categories');
+    var productFilterTrigger = $('.sidebar-nav--title');
+    var productFilterCategories = $('.sidebar-nav--categories');
 
     productFilterTrigger.bind('click', function(e){
       e.preventDefault();
       $(this).parent().find(productFilterCategories).slideToggle();
+      console.log('party');
     });
   }
 

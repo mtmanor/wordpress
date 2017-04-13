@@ -1,5 +1,6 @@
 
 .woocommerce-pagination {
+	padding-top: 4px;
 	padding-bottom: $base;
 
 	@include bp-min-width($medium) {

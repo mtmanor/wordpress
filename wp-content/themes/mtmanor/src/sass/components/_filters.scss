@@ -7,6 +7,7 @@
 
 .filter--select {
 	@include bp-max-width($medium) {
+		@include font-size(14px);
 		width: 100%;
 		padding: 0 20px;
 		border: 1px solid $navy;
@@ -38,11 +39,11 @@
 
   &:before {
     transform: rotate(45deg);
-    right: 10px;
+    right: 6px;
   }
 
   &:after {
     transform: rotate(-45deg);
-    right: 4px;
+    right: 0;
   }
 }

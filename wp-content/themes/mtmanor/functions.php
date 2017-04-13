@@ -340,6 +340,15 @@ function mtm_wpseo_breadcrumb_output( $output ){
 add_filter( 'wpseo_breadcrumb_output', 'mtm_wpseo_breadcrumb_output' );
 
 
+// Change "Default Sorting" to "Sort By"
+function mtm_change_default_sorting_name( $catalog_orderby ) {
+    $catalog_orderby = str_replace("Default sorting", "Sort by", $catalog_orderby);
+    return $catalog_orderby;
+}
+add_filter( 'woocommerce_catalog_orderby', 'mtm_change_default_sorting_name' );
+add_filter( 'woocommerce_default_catalog_orderby_options', 'mtm_change_default_sorting_name' );
+
+
 // Update Sale Label
 add_filter( 'woocommerce_sale_flash', 'mtm_custom_replace_sale_text' );
 function mtm_custom_replace_sale_text( $html ) {

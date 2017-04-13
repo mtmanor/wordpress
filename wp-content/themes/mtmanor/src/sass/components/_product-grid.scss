@@ -2,6 +2,11 @@
 .grid-filters {
 	padding-bottom: $base;
 
+	@include bp-max-width($medium) {
+		width: 50%;
+		padding-right: 10px;
+	}
+
 	@include bp-min-width($medium) {
 		display: flex;
 		align-items: center;
@@ -22,6 +27,8 @@
 }
 
 .products-list {
+	position: relative;
+
 	@include bp-min-width($medium) {
 		display: flex;
 	}

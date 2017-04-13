@@ -73,7 +73,8 @@ select {
   &:after {
     transform: rotate(-45deg);
     right: 18px;
-  }}
+  }
+}
 
 select::-ms-expand {
   display: none;

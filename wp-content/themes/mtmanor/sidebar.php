@@ -1,5 +1,5 @@
 <nav class="sidebar-nav">
-	<h4 class="title__h5">Type</h4>
+	<h4 class="title__h5 sidebar-nav--title">Kategori</h4>
 	<?php
 		$current_cat_id = get_queried_object_id();
 		$current_cat = get_term($current_cat_id);
@@ -18,6 +18,7 @@
 		$terms = get_terms( 'product_cat', $args );
 
 		if ( $terms ) {
+			echo '<div class="sidebar-nav--categories">';
 			foreach ( $terms as $term ) {
 				echo '<a href="'.  esc_url( get_term_link( $term ) ) .'"';
 				if ($term == $current_cat) {
@@ -27,6 +28,7 @@
 				echo $term->name;
 				echo '</a>';
 			}
+			echo '</div>';
 		}
 	?>
 </nav>

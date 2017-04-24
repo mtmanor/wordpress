@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 2.6.1
+ * @version 3.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -34,9 +34,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
  * @hooked woocommerce_template_loop_product_link_open - 10
  */
 do_action( 'woocommerce_before_shop_loop_item' );
-?>
 
-<?php
 /**
  * woocommerce_before_shop_loop_item_title hook.
  *

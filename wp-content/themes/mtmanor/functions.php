@@ -4,6 +4,10 @@ function mtm_setup() {
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
 	register_nav_menu( 'primary', __( 'Primary Menu', 'mtm' ) );
+
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
 }
 
 add_action( 'wp_enqueue_scripts', 'mtm_load_scripts' );
@@ -342,8 +346,8 @@ add_filter( 'wpseo_breadcrumb_output', 'mtm_wpseo_breadcrumb_output' );
 
 // Change "Default Sorting" to "Sort By"
 function mtm_change_default_sorting_name( $catalog_orderby ) {
-    $catalog_orderby = str_replace("Default sorting", "Sort by", $catalog_orderby);
-    return $catalog_orderby;
+  $catalog_orderby = str_replace("Default sorting", "Sort by", $catalog_orderby);
+  return $catalog_orderby;
 }
 add_filter( 'woocommerce_catalog_orderby', 'mtm_change_default_sorting_name' );
 add_filter( 'woocommerce_default_catalog_orderby_options', 'mtm_change_default_sorting_name' );

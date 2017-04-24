@@ -127,6 +127,6 @@ jQuery(document).ready(function($) {
   mobileSearch();
   // cartDrawerToggle();
   productFilterToggle();
-  productThumbToggle();
+  // productThumbToggle();
 
 });

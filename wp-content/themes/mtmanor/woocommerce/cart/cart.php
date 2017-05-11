@@ -137,10 +137,13 @@ do_action( 'woocommerce_before_cart' ); ?>
 			<footer class="cart-footer">
 				<?php if ( wc_coupons_enabled() ) { ?>
 					<div class="cart-coupon">
-						<label for="coupon_code" class="is-hidden"><?php _e( 'Coupon:', 'woocommerce' ); ?></label>
-						<input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" />
-						<input type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>" />
-						<?php do_action( 'woocommerce_cart_coupon' ); ?>
+						<a href="#" class="cart-coupon--trigger">Rabatt</a>
+						<div class="cart-coupon--form">
+							<label for="coupon_code" class="is-hidden"><?php _e( 'Coupon:', 'woocommerce' ); ?></label>
+							<input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" />
+							<input type="submit" class="btn btn__navy" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>" />
+							<?php do_action( 'woocommerce_cart_coupon' ); ?>
+						</div>
 					</div>
 				<?php } ?>
 

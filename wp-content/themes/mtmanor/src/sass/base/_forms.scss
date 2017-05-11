@@ -33,7 +33,9 @@ textarea {
   border: 1px solid $navy;
 }
 
-::placeholder {}
+::placeholder {
+  color: $md-grey;
+}
 
 
 /** Select ============**/
@@ -119,4 +121,9 @@ input[type=number] {
 
 /** Errors ============**/
 
-.form-error {}
+.woocommerce-error {
+	margin-bottom: $base;
+	padding: 8px 20px;
+	background: $red;
+	color: #fff;
+}

@@ -21,4 +21,8 @@
   @include bp-min-width($large) {
 		width: 33.333%;
   }
+
+	@include bp-min-width($xlarge) {
+		width: 25%;
+  }
 }

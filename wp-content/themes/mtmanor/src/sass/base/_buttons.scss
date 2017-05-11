@@ -24,6 +24,7 @@ a {
 
 @mixin btn__navy {
   border-color: $navy;
+  color: $navy;
 
   &:hover {
     background: $navy;
@@ -57,6 +58,16 @@ a {
 
   &:hover {
     background: $grey;
+    color: $navy;
+  }
+}
+
+@mixin btn__md-grey {
+  border-color: $md-grey;
+  color: $md-grey;
+
+  &:hover {
+    background: $md-grey;
     color: $navy;
   }
 }
@@ -103,6 +114,14 @@ a {
 
 .btn__white {
   @include btn__white;
+}
+
+.btn__grey {
+  @include btn__grey;
+}
+
+.btn__md-grey {
+  @include btn__md-grey;
 }
 
 .btn__solid-navy {

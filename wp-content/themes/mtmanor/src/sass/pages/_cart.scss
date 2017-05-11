@@ -225,7 +225,9 @@ td.product-subtotal {
 	@include bp-max-width($medium) {
 		margin-bottom: $base;
 	}
+}
 
+.cart-coupon--form {
 	@include bp-min-width($medium) {
 		position: relative;
 		width: 400px;
@@ -242,9 +244,7 @@ td.product-subtotal {
 	}
 }
 
-.cart-coupon .button {
-	@include btn__solid-navy;
-
+.cart-coupon .btn {
 	@include bp-max-width($medium) {
 		width: 100%;
 	}
@@ -254,6 +254,20 @@ td.product-subtotal {
 		top: 0;
 		right: 0;
 	}
+}
+
+.cart-coupon--trigger {
+	display: inline-block;
+	margin-bottom: 12px;
+	color: $md-grey;
+
+	&:hover {
+		color: $navy;
+	}
+}
+
+.cart-coupon--form {
+	display: none;
 }
 
 .cart-footer .btn {
@@ -290,6 +304,10 @@ td.product-subtotal {
 
 .order-total {
 	font-weight: $weight-medium;
+}
+
+.includes_tax {
+	display: block;
 }
 
 .wc-proceed-to-checkout {

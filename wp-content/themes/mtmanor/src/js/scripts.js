@@ -122,10 +122,21 @@ jQuery(document).ready(function($) {
     });
   }
 
+  var couponToggle = function() {
+    couponTrigger = $('.cart-coupon--trigger');
+    couponForm = $('.cart-coupon--form');
+
+    couponTrigger.bind('click', function(e){
+      e.preventDefault();
+      couponForm.toggle();
+    })
+  }
+
   stickyHeader();
   mobileNav();
   mobileSearch();
   // cartDrawerToggle();
+  couponToggle();
   productFilterToggle();
   // productThumbToggle();
 

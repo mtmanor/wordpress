@@ -1,30 +1,27 @@
 <?php get_header(); ?>
 
+<?php if ( have_posts() ) : ?>
 
-		<?php if ( have_posts() ) : ?>
+	<header class="page-header">
+		<h1 class="title__h1"><?php printf( __( 'Search Results for: %s', 'twentysixteen' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
+	</header>
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentysixteen' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
+	<section class="search-results">
+		<div class="container">
+			<div class="product-grid flex-grid">
 
-			<?php while ( have_posts() ) : the_post(); ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+					<?php wc_get_template_part( 'content', 'product' ); ?>
+				<?php endwhile; ?>
 
-				<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+			</div>
+		</div>
+	</section>
 
-			<?php endwhile;
-
-			// Previous/next page navigation.
-			the_posts_pagination( array(
-				'prev_text'          => __( 'Previous page', 'twentysixteen' ),
-				'next_text'          => __( 'Next page', 'twentysixteen' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>',
-			) );
-
-		// If no content, include the "No posts found" template.
+	<?php
 		else :
 			get_template_part( 'template-parts/content', 'none' );
-
 		endif;
-		?>
+	?>
 
 <?php get_footer(); ?>

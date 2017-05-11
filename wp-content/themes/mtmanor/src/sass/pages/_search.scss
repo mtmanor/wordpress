@@ -1,0 +1,24 @@
+
+.search-results .container {
+	@include bp-min-width($medium) {
+		padding-bottom: $base*2;
+	}
+}
+
+.search-results .product-grid--item {
+	padding-left: 10px;
+	padding-right: 10px;
+
+	@include bp-min-width($medium) {
+		padding-left: 14px;
+		padding-right: 14px;
+	}
+
+	@include bp-max-width($large) {
+		width: 50%;
+  }
+
+  @include bp-min-width($large) {
+		width: 33.333%;
+  }
+}

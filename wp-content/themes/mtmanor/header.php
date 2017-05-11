@@ -38,6 +38,7 @@
 				</a>
 				<form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" class="header-search--form">
 					<input type="text" name="s" id="search" value="<?php echo get_search_query() ?>" class="header-search--input" />
+					<input type="hidden" name="post_type" value="products" />
 					<button type="submit" id="searchsubmit" class="header-search--btn">
 						<svg class="icon-search">
 							<use xlink:href="#icon-search"></use>

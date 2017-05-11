@@ -171,13 +171,6 @@ function woo_remove_product_tabs( $tabs ) {
 }
 
 
-// add_action( 'after_setup_theme', 'mtm_product_gallery' );
-// function mtm_product_gallery() {
-// 	add_theme_support( 'wc-product-gallery-zoom' );
-// 	add_theme_support( 'wc-product-gallery-lightbox' );
-// 	add_theme_support( 'wc-product-gallery-slider' );
-// }
-
 // Display Woocommerce Product Description in place of Summary
 function woocommerce_template_product_description() {
 	wc_get_template( 'single-product/tabs/description.php' );

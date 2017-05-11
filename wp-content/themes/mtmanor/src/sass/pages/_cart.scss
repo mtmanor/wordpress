@@ -260,9 +260,12 @@ td.product-subtotal {
 	display: inline-block;
 	margin-bottom: 12px;
 	color: $md-grey;
+	border-bottom: 1px solid $md-grey;
+	line-height: 1.25;
 
 	&:hover {
 		color: $navy;
+		border-color: #fff;
 	}
 }
 

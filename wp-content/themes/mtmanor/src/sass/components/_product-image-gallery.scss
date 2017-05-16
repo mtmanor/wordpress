@@ -13,7 +13,9 @@
 
 .woocommerce-product-gallery__wrapper,
 .woocommerce-product-gallery__image {
-	height: 550px;
+	@include bp-min-width($medium) {
+		height: 550px;
+	}
 }
 
 .woocommerce-product-gallery__image {
@@ -24,6 +26,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	height: 360px;
 	padding: 20px;
 	background: $grey;
 	cursor: default;

@@ -7,6 +7,7 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+	<?php if ( function_exists( 'gtm4wp_the_gtm_tag' ) ) { gtm4wp_the_gtm_tag(); } ?>
 	<?php get_template_part( 'partials/svg' ); ?>
 
 	<div class="message-bar">

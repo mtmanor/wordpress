@@ -388,3 +388,10 @@ function wc_empty_cart_redirect_url() {
 	// return $_SERVER['HTTP_REFERER'];
 }
 add_filter( 'woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url' );
+
+
+// Order ID increased number
+function mtm_woocommerce_order_number( $this_get_id, $instance ) {
+    return '100' . $this_get_id;
+};
+add_filter( 'woocommerce_order_number', 'mtm_woocommerce_order_number', 10, 2 );

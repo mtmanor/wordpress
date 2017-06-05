@@ -15,15 +15,12 @@
                 "class": "",
                 "id": ""
             },
-            "min": "",
-            "max": "",
-            "button_label": "Add Row",
-            "layouts": [
-                {
+            "layouts": {
+                "584552b180c5b": {
                     "key": "584552b180c5b",
                     "name": "",
                     "label": "",
-                    "display": "table",
+                    "display": "row",
                     "sub_fields": [
                         {
                             "key": "field_584552b9e855b",
@@ -91,7 +88,7 @@
                             "key": "field_5845530ae855e",
                             "label": "Button Link",
                             "name": "hero_button_link",
-                            "type": "page_link",
+                            "type": "text",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -100,17 +97,20 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "post_type": [],
-                            "taxonomy": [],
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "allow_archives": 1
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
                         }
                     ],
                     "min": "",
                     "max": ""
                 }
-            ]
+            },
+            "button_label": "Add Row",
+            "min": "",
+            "max": ""
         },
         {
             "key": "field_5847d35cf8a5f",
@@ -301,5 +301,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1496678282
+    "modified": 1496700662
 }

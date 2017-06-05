@@ -15,16 +15,8 @@
 }
 
 .page-header p {
-	@include font-size(18px);
 	display: inline-block;
-	max-width: 830px;
-	font-family: $serif;
-	font-weight: $weight-light;
-
-	@include bp-min-width($large) {
-		@include font-size(24px);
-		line-height: 1.25;
-	}
+	max-width: 760px;
 }
 
 .page-header .term-description {

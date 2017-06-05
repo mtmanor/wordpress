@@ -147,3 +147,9 @@ button {
   outline: none;
   cursor: pointer;
 }
+
+.submit-wrap input {
+  @include btn;
+  @include btn__solid-navy;
+  height: 48px;
+}

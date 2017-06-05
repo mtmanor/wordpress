@@ -8,6 +8,10 @@
   }
 }
 
+.nf-field-container {
+  margin-bottom: 12px;
+}
+
 button,
 input,
 select,
@@ -19,18 +23,20 @@ textarea {
 }
 
 .form-input,
-.input-text {
+.input-text,
+.nf-field input:not([type="button"]) {
   width: 100%;
   height: 40px;
   padding: 0 20px;
-  border: 1px solid $navy;
+  border: 2px solid $navy;
 }
 
 textarea {
+  display: block;
   width: 100%;
   height: $base*4;
   padding: 12px 20px;
-  border: 1px solid $navy;
+  border: 2px solid $navy;
 }
 
 ::placeholder {
@@ -121,7 +127,13 @@ input[type=number] {
 
 /** Errors ============**/
 
-.woocommerce-error {
+.nf-form-fields-required,
+.ninja-forms-req-symbol {
+  display: none;
+}
+
+.woocommerce-error,
+.nf-error-msg {
 	margin-bottom: $base;
 	padding: 8px 20px;
 	background: $red;

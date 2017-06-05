@@ -130,10 +130,6 @@ function get_default_blog_image($size=null){
 	return $image[0];
 }
 
-// ACF Options Page
-if( function_exists('acf_add_options_page') ) {
-	acf_add_options_page();
-}
 
 // Short Title
 function shortTitle($text) {
@@ -148,6 +144,13 @@ function shortTitle($text) {
 	}
 	return $text;
 }
+
+
+// Remove ninja form stylesheets
+function wpgood_nf_display_enqueue_scripts(){
+	wp_dequeue_style( 'nf-display' );
+}
+add_action( 'nf_display_enqueue_scripts', 'wpgood_nf_display_enqueue_scripts');
 
 
 // Enable Woocommerce Support

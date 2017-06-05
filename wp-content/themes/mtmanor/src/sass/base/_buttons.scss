@@ -132,6 +132,13 @@ a {
   @include btn__solid-grey;
 }
 
+.btn__borderless {
+  display: inline-block;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
 input[type="submit"],
 input[type="button"],
 button {

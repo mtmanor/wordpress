@@ -2,6 +2,7 @@
 .js-no-scroll {
   @include bp-max-width($large) {
     overflow: hidden;
+    height: 100%;
   }
 }
 

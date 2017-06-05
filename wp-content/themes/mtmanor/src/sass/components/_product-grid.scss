@@ -12,10 +12,6 @@
 		align-items: center;
 		justify-content: space-between;
 	}
-
-	@include bp-min-width($large) {
-		padding-bottom: $base*2;
-	}
 }
 
 .result-count {

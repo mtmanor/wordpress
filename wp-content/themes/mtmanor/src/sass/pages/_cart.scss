@@ -228,37 +228,24 @@ td.product-subtotal {
 }
 
 .cart-coupon--form {
-	@include bp-min-width($medium) {
-		position: relative;
-		width: 400px;
-		padding-right: 180px;
-	}
+	position: relative;
+	width: 100%;
+	margin-top: 12px;
+	padding-right: 120px;
 }
 
 .cart-coupon .input-text {
 	border: 2px solid $navy;
 	height: 48px;
-
-	@include bp-max-width($medium) {
-		margin-bottom: 12px;
-	}
 }
 
-.cart-coupon .btn {
-	@include bp-max-width($medium) {
-		width: 100%;
-	}
-
-	@include bp-min-width($medium) {
-		position: absolute;
-		top: 0;
-		right: 0;
-	}
+.cart-coupon .btn__borderless {
+	@include vertical-center;
+	right: 0;
 }
 
 .cart-coupon--trigger {
 	display: inline-block;
-	margin-bottom: 12px;
 	color: $md-grey;
 	border-bottom: 1px solid $md-grey;
 	line-height: 1.25;

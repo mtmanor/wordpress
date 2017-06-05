@@ -72,12 +72,6 @@
 	}
 }
 
-.product-list-table tr:last-child td {
-	@include bp-min-width($medium) {
-		padding-bottom: 40px;
-	}
-}
-
 .product-list-table td.product-remove {
 	@include bp-max-width($medium) {
 		float: right;
@@ -159,8 +153,8 @@
 
 .product-list-table tr:nth-child(2n+1) td.product-thumbnail {
 	@include bp-min-width($medium) {
-		padding-top: 40px;
-		padding-bottom: 40px;
+		padding-top: 30px;
+		padding-bottom: 30px;
 	}
 }
 
@@ -217,13 +211,17 @@ td.product-subtotal {
 	}
 
 	@include bp-min-width($large) {
-		padding-top: $base;
+		padding-top: 18px;
 	}
 }
 
 .cart-coupon {
 	@include bp-max-width($medium) {
 		margin-bottom: $base;
+	}
+
+	@include bp-min-width($medium) {
+		padding-top: 12px;
 	}
 }
 

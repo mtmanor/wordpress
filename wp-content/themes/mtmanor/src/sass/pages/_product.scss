@@ -15,6 +15,14 @@
 	display: block;
 }
 
+.product-details {
+	margin-bottom: $base;
+
+	@include bp-min-width($medium) {
+		margin-bottom: $base*3;
+	}
+}
+
 .product-details .product-price {
 	display: flex;
 	align-items: baseline;
@@ -146,13 +154,16 @@
 
 .related-products .product-grid--item {
 	@include bp-max-width($medium) {
-		width: 100%;
+		width: 50%;
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 
 	@include bp-min-width($medium) {
 		width: 25%;
 		padding-left: 14px;
 		padding-right: 14px;
+		margin-bottom: 0;
 	}
 }
 

@@ -5,6 +5,7 @@
 
 	@include bp-min-width($medium) {
 		padding-bottom: $base*3;
+		padding-top: $base;
 	}
 }
 

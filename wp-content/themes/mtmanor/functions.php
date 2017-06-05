@@ -302,7 +302,7 @@ function mtm_hide_category_count() {
 
 // Move Category Breadcrumbs
 function mtm_remove_category_breadcrumb() {
-	if ( is_product_category() ) {
+	if ( is_product_category() || is_product_tag() ) {
 		remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
 		add_action( 'woocommerce_before_shop_loop', 'woocommerce_breadcrumb', 5 );
 	}

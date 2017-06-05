@@ -1,13 +1,4 @@
 
-.recent-news .container {
-	padding-top: $base;
-	padding-bottom: $base;
-
-	@include bp-min-width($medium) {
-		padding-top: $base*2;
-	}
-}
-
 .post-grid--item {
 	margin-bottom: $base;
 	text-align: center;

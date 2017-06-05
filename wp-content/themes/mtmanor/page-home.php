@@ -81,23 +81,23 @@ if( have_rows('home_hero') ): ?>
 	<div class="recommended-products--wrapper">
 		<div class="container">
 
-			<div class="product-grid recommended-grid flex-grid">
-				<?php
-					$args = array(
-						'post_type' => 'product',
-						'posts_per_page' => 4
-						);
-					$loop = new WP_Query( $args );
-					if ( $loop->have_posts() ) {
-						while ( $loop->have_posts() ) : $loop->the_post();
-							wc_get_template_part( 'content', 'product' );
-						endwhile;
-					} else {
-						echo __( 'No products found' );
-					}
-					wp_reset_postdata();
-				?>
-			</div>
+			<?php if( have_rows('recommended_products') ): ?>
+				<div class="product-grid recommended-grid flex-grid">
+					<?php while( have_rows('recommended_products') ): the_row(); ?>
+
+						<?php
+							$post_object = get_sub_field('product');
+							$post = $post_object;
+							setup_postdata( $post );
+						?>
+
+							<?php wc_get_template_part( 'content', 'product' ); ?>
+
+						<?php wp_reset_postdata(); ?>
+
+					<?php endwhile; ?>
+				</div>
+			<?php endif; ?>
 
 		</div>
 	</div>

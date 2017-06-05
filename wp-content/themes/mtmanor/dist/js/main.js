@@ -24,15 +24,17 @@ jQuery(document).ready(function($) {
     var header = $('.header');
     var mobileNavTrigger = $('.hamburger');
     var mobileNavContainer = $('.menu');
-    var mobileNavParentItem = $('.main-nav .menu > li > a');
+    var mobileNavParentItem = $('.touchevents .main-nav .menu > li > a');
 
-    mobileNavTrigger.bind('click', function(e){
-      e.preventDefault();
-      $(this).toggleClass('js-is-active');
-      body.toggleClass('js-no-scroll');
-      header.toggleClass('js-is-sticky');
-      mobileNavContainer.toggleClass('js-is-visible');
-    });
+    if(windowWidth < 1000) {
+      mobileNavTrigger.bind('click', function(e){
+        e.preventDefault();
+        $(this).toggleClass('js-is-active');
+        body.toggleClass('js-no-scroll');
+        header.toggleClass('js-is-sticky');
+        mobileNavContainer.toggleClass('js-is-visible');
+      });
+    }
 
     if(windowWidth < 1000) {
       mobileNavParentItem.bind('click', function(e){

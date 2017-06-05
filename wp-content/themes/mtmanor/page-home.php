@@ -54,7 +54,7 @@ if( have_rows('home_hero') ): ?>
 				$term = get_sub_field('category');
 				$thumbnail_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
 		    $image = wp_get_attachment_url( $thumbnail_id ); ?>
-					<a href="<?php echo get_term_link( $term ); ?>" class="product-grid--item col-1-4">
+					<a href="<?php echo get_term_link( $term ); ?>" class="product-grid--item">
 						<div class="category-grid--item-wrapper">
 							<div class="category-grid--overlay">
 								<h3 class="category-grid--overlay-title title__h2"><?php echo $term->name; ?></h3>

@@ -52,8 +52,9 @@
 				</form>
 			</div>
 
-			<form class="mobile-search">
-				<input type="text" class="mobile-search--input" placeholder="Search" />
+			<form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" class="mobile-search">
+				<input type="text" name="s" id="search" value="<?php echo get_search_query() ?>" placeholder="Search" class="mobile-search--input" />
+				<input type="hidden" name="post_type" value="products" />
 				<button class="mobile-search--btn">
 					<svg class="icon-search">
 						<use xlink:href="#icon-search"></use>

@@ -9,5 +9,13 @@
 
 .woocommerce-message .button {
   @include btn__navy;
-  margin-right: 20px;
+
+  @include bp-max-width($medium) {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  @include bp-min-width($medium) {
+    margin-right: 20px;
+  }
 }

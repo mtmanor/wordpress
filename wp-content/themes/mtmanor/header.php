@@ -64,7 +64,9 @@
 
 			<a href="<?php echo wc_get_cart_url(); ?>" class="header-cart-link" title="<?php _e( 'View your shopping cart' ); ?>">
 				<?php
-				$count = WC()->cart->get_cart_contents_count();
+				global $woocommerce;
+				$count = $woocommerce->cart->cart_contents_count;
+				// $count = WC()->cart->get_cart_contents_count();
 				if ($count > 0): ?>
 				<div class="header-cart-link--count"><?php echo $count; ?></div>
 				<?php endif; ?>

@@ -153,6 +153,14 @@ function wpgood_nf_display_enqueue_scripts(){
 add_action( 'nf_display_enqueue_scripts', 'wpgood_nf_display_enqueue_scripts');
 
 
+// Yoast Placement
+function yoasttobottom() {
+	return 'low';
+}
+add_filter( 'wpseo_metabox_prio', 'yoasttobottom');
+
+
+
 // Enable Woocommerce Support
 add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {

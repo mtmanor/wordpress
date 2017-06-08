@@ -1,0 +1,34 @@
+
+.error404 .page-title {
+	margin-bottom: $base;
+}
+
+.error404 .page-header p {
+	margin-bottom: $base*2;
+}
+
+.error-search {
+	position: relative;
+	max-width: 360px;
+	margin: 0 auto;
+}
+
+.error-search--input {
+	width: 100%;
+	height: 54px;
+	padding: 0 16px;
+	border: 2px solid $navy;
+}
+
+.error-search--btn {
+	@include vertical-center;
+	right: 12px;
+	width: 36px;
+	padding: 0;
+	background: none;
+}
+
+.error-search--btn .icon-search {
+	width: 30px;
+	height: 30px;
+}

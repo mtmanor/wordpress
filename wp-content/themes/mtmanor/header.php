@@ -42,7 +42,7 @@
 					</svg>
 				</a>
 				<form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" class="header-search--form">
-					<input type="text" name="s" id="search" value="<?php echo get_search_query() ?>" class="header-search--input" />
+					<input type="text" name="s" id="search" value="<?php echo get_search_query() ?>" class="header-search--input" placeholder="<?php echo _x( 'Search', '') ?>" />
 					<input type="hidden" name="post_type" value="products" />
 					<button type="submit" id="searchsubmit" class="header-search--btn">
 						<svg class="icon-search">
@@ -53,7 +53,7 @@
 			</div>
 
 			<form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" class="mobile-search">
-				<input type="text" name="s" id="search" value="<?php echo get_search_query() ?>" placeholder="Search" class="mobile-search--input" />
+				<input type="text" name="s" id="search" value="<?php echo get_search_query() ?>" placeholder="<?php echo _x( 'Search', '') ?>" class="mobile-search--input" />
 				<input type="hidden" name="post_type" value="products" />
 				<button class="mobile-search--btn">
 					<svg class="icon-search">

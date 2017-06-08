@@ -72,7 +72,6 @@ if( have_rows('home_hero') ): ?>
 			</div>
 		<?php endif; ?>
 
-
 	</div>
 </section>
 

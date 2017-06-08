@@ -24,17 +24,15 @@ jQuery(document).ready(function($) {
     var header = $('.header');
     var mobileNavTrigger = $('.hamburger');
     var mobileNavContainer = $('.menu');
-    var mobileNavParentItem = $('.touchevents .main-nav .menu > li > a');
+    var mobileNavParentItem = $('.main-nav .menu > li > a');
 
-    if(windowWidth < 1000) {
-      mobileNavTrigger.bind('click', function(e){
-        e.preventDefault();
-        $(this).toggleClass('js-is-active');
-        body.toggleClass('js-no-scroll');
-        header.toggleClass('js-is-sticky');
-        mobileNavContainer.toggleClass('js-is-visible');
-      });
-    }
+    mobileNavTrigger.bind('click', function(e){
+      e.preventDefault();
+      $(this).toggleClass('js-is-active');
+      body.toggleClass('js-no-scroll');
+      header.toggleClass('js-is-sticky');
+      mobileNavContainer.toggleClass('js-is-visible');
+    });
 
     if(windowWidth < 1000) {
       mobileNavParentItem.bind('click', function(e){
@@ -48,11 +46,13 @@ jQuery(document).ready(function($) {
   var mobileSearch = function() {
     var mobileSearchTrigger = $('.header-search--trigger');
     var mobileSearchForm = $('.mobile-search');
+    var mobileSearchInput = $('.mobile-search--input');
 
     mobileSearchTrigger.bind('click', function(e){
       e.preventDefault();
       $(this).toggleClass('js-is-active');
       mobileSearchForm.toggleClass('js-is-visible');
+      mobileSearchInput.focus();
     });
   }
 

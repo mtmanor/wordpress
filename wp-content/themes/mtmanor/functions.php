@@ -51,7 +51,7 @@ function mtm_load_scripts() {
 
 	// main js
 	wp_register_script('main-js',
-		get_bloginfo('template_url') . '/dist/js/main.js',
+		get_bloginfo('template_url') . '/dist/js/main.min.js',
 		$deps,
 		ENQUEUE_VERSION,
 		true

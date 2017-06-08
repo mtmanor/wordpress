@@ -46,11 +46,13 @@ jQuery(document).ready(function($) {
   var mobileSearch = function() {
     var mobileSearchTrigger = $('.header-search--trigger');
     var mobileSearchForm = $('.mobile-search');
+    var mobileSearchInput = $('.mobile-search--input');
 
     mobileSearchTrigger.bind('click', function(e){
       e.preventDefault();
       $(this).toggleClass('js-is-active');
       mobileSearchForm.toggleClass('js-is-visible');
+      mobileSearchInput.focus();
     });
   }
 

@@ -48,11 +48,20 @@ jQuery(document).ready(function($) {
     var mobileSearchForm = $('.mobile-search');
     var mobileSearchInput = $('.mobile-search--input');
 
-    mobileSearchTrigger.bind('click', function(e){
+    mobileSearchTrigger.bind('click', function(e) {
       e.preventDefault();
       $(this).toggleClass('js-is-active');
-      mobileSearchForm.toggleClass('js-is-visible');
-      mobileSearchInput.focus();
+
+      if ($(this).is('.js-is-active')) {
+        setTimeout(function() {
+          $('.mobile-search--input').val('');
+        }, 1000);
+        $('.mobile-search--input').blur();
+        mobileSearchForm.removeClass('js-is-visible');
+      } else {
+        $('.mobile-search--input').focus();
+        mobileSearchForm.addClass('js-is-visible');
+      }
     });
   }
 
@@ -92,7 +101,6 @@ jQuery(document).ready(function($) {
     productFilterTrigger.bind('click', function(e){
       e.preventDefault();
       $(this).parent().find(productFilterCategories).slideToggle();
-      console.log('party');
     });
   }
 
@@ -137,9 +145,9 @@ jQuery(document).ready(function($) {
   stickyHeader();
   mobileNav();
   mobileSearch();
-  // cartDrawerToggle();
   couponToggle();
   productFilterToggle();
+  // cartDrawerToggle();
   // productThumbToggle();
 
 });

@@ -8,7 +8,6 @@
 }
 
 .header {
-	// transition: top .3s ease-in-out;
 	position: absolute;
 	top: 48px;
 	left: 0;
@@ -229,6 +228,7 @@
 	@include vertical-center;
 	right: 20px;
 	width: 30px;
+	padding: 0;
 	background: none;
 }
 

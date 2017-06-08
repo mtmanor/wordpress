@@ -26,3 +26,15 @@
 		width: 25%;
   }
 }
+
+.search-no-results .page-title {
+	margin-bottom: $base;
+}
+
+.search-no-results .page-header p {
+	margin-bottom: $base*2;
+}
+
+.search-results--term {
+	font-weight: $weight-medium;
+}

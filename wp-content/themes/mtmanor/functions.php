@@ -376,17 +376,17 @@ function mtm_custom_get_availability( $availability, $_product ) {
 
 	// Change One Left Text
 	if ( $_product->is_in_stock() && $product->get_stock_quantity() == 1 ) {
-		$availability['availability'] = sprintf( __('Last one in stock', 'woocommerce'), $product->get_stock_quantity());
+		$availability['availability'] = sprintf( __('En kvar i lager', 'woocommerce'), $product->get_stock_quantity());
 	}
 
 	// Change Backorder Text
 	if ( $_product->is_in_stock() && $product->get_stock_quantity() == 0 ) {
-		$availability['availability'] = sprintf( __('Delivered in 7 - 10 days', 'woocommerce'), $product->get_stock_quantity());
+		$availability['availability'] = sprintf( __('Leverans inom 7 - 10 dagar', 'woocommerce'), $product->get_stock_quantity());
 	}
 
 	// Change Out of Stock Text
 	if ( ! $_product->is_in_stock() ) {
-		$availability['availability'] = __('Sold Out', 'woocommerce');
+		$availability['availability'] = __('Utsåld', 'woocommerce');
 	}
 
 	return $availability;

@@ -4,7 +4,6 @@
 <?php
 if( have_rows('home_hero') ): ?>
 <section class="home-hero">
-	<div class="container">
 	<?php
 	while ( have_rows('home_hero') ) : the_row(); ?>
 		<?php $image = get_sub_field('hero_image'); ?>
@@ -16,7 +15,6 @@ if( have_rows('home_hero') ): ?>
 		</a>
 
 	<?php endwhile; ?>
-	</div>
 </section>
 <?php endif; ?>
 

@@ -48,10 +48,11 @@ if( have_rows('home_hero') ): ?>
 		if( have_rows('featured_categories') ): ?>
 			<div class="category-grid flex-grid">
 				<?php
-				while ( have_rows('featured_categories') ) : the_row();
-				$term = get_sub_field('category');
-				$thumbnail_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
-		    $image = wp_get_attachment_url( $thumbnail_id ); ?>
+					while ( have_rows('featured_categories') ) : the_row();
+					$term = get_sub_field('category');
+					$thumbnail_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
+			    $image = wp_get_attachment_url( $thumbnail_id );
+				?>
 					<a href="<?php echo get_term_link( $term ); ?>" class="product-grid--item">
 						<div class="category-grid--item-wrapper">
 							<div class="category-grid--overlay">
@@ -86,11 +87,11 @@ if( have_rows('home_hero') ): ?>
 							$post_object = get_sub_field('product');
 							$post = $post_object;
 							setup_postdata( $post );
+
+								wc_get_template_part( 'content', 'product' );
+
+							wp_reset_postdata();
 						?>
-
-							<?php wc_get_template_part( 'content', 'product' ); ?>
-
-						<?php wp_reset_postdata(); ?>
 
 					<?php endwhile; ?>
 				</div>

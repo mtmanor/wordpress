@@ -3,6 +3,7 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     sourcemaps = require('gulp-sourcemaps'),
+    cleanCSS = require('gulp-clean-css'),
     jshint = require('gulp-jshint'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
@@ -29,6 +30,7 @@ gulp.task('sass', function () {
       .pipe(sass().on('error', sass.logError))
       .pipe(autoprefixer('last 2 version'))
     .pipe(sourcemaps.write())
+    // .pipe(cleanCSS())
     .pipe(gulp.dest('./'))
     .pipe(reload({stream:true}));
 });

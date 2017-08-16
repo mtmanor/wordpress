@@ -411,6 +411,18 @@ add_filter( 'woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url' 
 
 // Order ID increased number
 function mtm_woocommerce_order_number( $this_get_id, $instance ) {
-    return '100' . $this_get_id;
+  return '100' . $this_get_id;
 };
 add_filter( 'woocommerce_order_number', 'mtm_woocommerce_order_number', 10, 2 );
+
+
+// Auto Complete all WooCommerce orders.
+add_action( 'woocommerce_thankyou', 'custom_woocommerce_auto_complete_order' );
+function custom_woocommerce_auto_complete_order( $order_id ) {
+  if ( ! $order_id ) {
+    return;
+  }
+
+  $order = wc_get_order( $order_id );
+  $order->update_status( 'completed' );
+}

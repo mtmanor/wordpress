@@ -104,34 +104,6 @@ jQuery(document).ready(function($) {
     });
   }
 
-  var productThumbToggle = function() {
-    var productThumbLink = $('.product-images--thumb');
-    var productMainImage = $('.product-images--main .wp-post-image');
-    var productMainImageLink = $('.product-images--main');
-
-    productThumbLink.removeClass('is-active');
-    productThumbLink.first().addClass('is-active');
-
-    productMainImageLink.bind('click', function(e){
-      e.preventDefault();
-    });
-
-    productThumbLink.bind('click', function(e){
-      e.preventDefault();
-      var searchSrc = /(-?)([\d]{2,4})((\s*)(x)(\s*))([\d]{2,4})/;
-
-      var img = $(this).find('img');
-      var src = img.attr('src');
-      var srcset = img.attr('srcset');
-      var srcUrl = src.replace(searchSrc, '');
-
-      productMainImage.attr('src', srcUrl);
-      productMainImage.attr('srcset', '');
-      productThumbLink.removeClass('is-active');
-      $(this).addClass('is-active');
-    });
-  }
-
   var couponToggle = function() {
     couponTrigger = $('.cart-coupon--trigger');
     couponForm = $('.cart-coupon--form');
@@ -148,6 +120,5 @@ jQuery(document).ready(function($) {
   couponToggle();
   productFilterToggle();
   // cartDrawerToggle();
-  // productThumbToggle();
 
 });

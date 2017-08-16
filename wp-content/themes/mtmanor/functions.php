@@ -48,15 +48,6 @@ function mtm_load_scripts() {
 	);
 	wp_enqueue_script('modernizr');
 
-	// clamp
-	wp_register_script('clamp',
-		get_bloginfo('template_url') . '/dist/js/clamp.min.js',
-		array(),
-		ENQUEUE_VERSION,
-		true
-	);
-	wp_enqueue_script('clamp');
-
 	// fitvids
 	wp_register_script('fitvids',
 		get_bloginfo('template_url') . '/dist/js/jquery.fitvids.js',

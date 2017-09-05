@@ -6,11 +6,10 @@
 	left: 0;
   z-index: 10;
 	padding: 2px 12px;
-	background: $navy;
-	color: #fff;
+	background: $salmon;
+	color: $navy;
   font-weight: $weight-medium;
   text-transform: uppercase;
-
 }
 
 .product-grid--thumb .onsale {
@@ -18,4 +17,14 @@
     top: -10px;
     left: -20px;
   }
+}
+
+.product .onsale {
+  @include bp-max-width($large) {
+    left: 20px;
+  }
+}
+
+.product-price del {
+	color: $md-grey;
 }

@@ -15,7 +15,7 @@
 	<?php get_template_part( 'partials/svg' ); ?>
 
 	<div class="message-bar">
-		<p>Alltid fri frakt, 1–3 dagars leveranstid!</p>
+		<p><?php the_field('top_banner_content', 'option'); ?></p>
 	</div>
 
 	<header class="header">

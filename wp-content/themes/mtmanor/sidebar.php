@@ -1,3 +1,4 @@
+<?php if( is_product_category() ): ?>
 <nav class="sidebar-nav">
 	<h4 class="title__h5 sidebar-nav--title">Kategori</h4>
 	<?php
@@ -32,6 +33,30 @@
 		}
 	?>
 </nav>
+<?php else: ?>
+	<nav class="sidebar-nav">
+		<h4 class="title__h5 sidebar-nav--title">Kategori</h4>
+		<?php
+			$args = array(
+				'parent' => 0
+			);
+
+			$terms = get_terms( 'product_cat', $args );
+
+			if ( $terms ) {
+				echo '<div class="sidebar-nav--categories">';
+				foreach ( $terms as $term ) {
+					echo '<a href="'.  esc_url( get_term_link( $term ) ) .'"';
+					echo '>';
+					echo $term->name;
+					echo '</a>';
+				}
+				echo '</div>';
+			}
+		?>
+	</nav>
+<?php endif; ?>
+
 
 <?php if ( is_active_sidebar( 'primary-widget-area' ) ) : ?>
 <aside id="sidebar" role="complementary">

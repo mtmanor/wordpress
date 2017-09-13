@@ -163,6 +163,11 @@ function yoasttobottom() {
 add_filter( 'wpseo_metabox_prio', 'yoasttobottom');
 
 
+// Enable ACF Options Page
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page();
+}
+
 
 // Enable Woocommerce Support
 add_action( 'after_setup_theme', 'woocommerce_support' );
@@ -313,7 +318,7 @@ function mtm_hide_category_count() {
 
 // Move Category Breadcrumbs
 function mtm_remove_category_breadcrumb() {
-	if ( is_product_category() || is_product_tag() ) {
+	if ( is_product_category() || is_product_tag() || is_shop() ) {
 		remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
 		add_action( 'woocommerce_before_shop_loop', 'woocommerce_breadcrumb', 5 );
 	}

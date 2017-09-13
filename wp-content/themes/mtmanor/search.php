@@ -24,7 +24,7 @@
 
 			<h1 class="page-title title__h1">Whoops!</h1>
 
-			<?php printf( __( 'No search results for: <span class="search-results--term">"%s"</span>. Search again or browse by category below.', 'twentysixteen' ), '<p>' . esc_html( get_search_query() ) . '</p>' ); ?>
+			<p><?php printf( __( 'No search results for: <span class="search-results--term">"%s"</span>. Search again or browse by category below.', 'twentysixteen' ),  esc_html( get_search_query() ) ); ?></p>
 
 			<form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" class="error-search">
 				<input type="text" name="s" id="search" value="" placeholder="<?php echo _x( 'Search', '') ?>" class="error-search--input" />

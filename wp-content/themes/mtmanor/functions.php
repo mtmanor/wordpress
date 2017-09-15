@@ -22,6 +22,11 @@ function disable_wp_emojicons() {
 }
 add_action( 'init', 'disable_wp_emojicons' );
 
+function mtm_meta_tags() {
+	echo '<meta name="google-site-verification" content="RE8rEXRngLwBj5agGd1T2hD1iv0R9CdfA0i-A7TAus0" />';
+}
+add_action('wp_head', 'mtm_meta_tags');
+
 add_action( 'wp_enqueue_scripts', 'mtm_load_scripts' );
 function mtm_load_scripts() {
 

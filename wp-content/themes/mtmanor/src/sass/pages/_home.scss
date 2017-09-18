@@ -86,37 +86,6 @@
 	margin-bottom: $base;
 }
 
-.category-grid {
-	@include bp-max-width($medium) {
-		margin-left: -10px;
-		margin-right: -10px;
-	}
-}
-
-.category-grid .product-grid--item {
-	padding-left: 10px;
-	padding-right: 10px;
-
-	@include bp-min-width($medium) {
-		padding-left: 14px;
-		padding-right: 14px;
-	}
-
-	@include bp-max-width($large) {
-		width: 50%;
-	}
-
-	@include bp-min-width($large) {
-		width: 25%;
-	}
-}
-
-.category-grid--category-title {
-	@include bp-max-width($small) {
-		@include font-size(18px);
-	}
-}
-
 .recommended-products {
 	@include bp-min-width($medium) {
 		padding-top: $base*2;

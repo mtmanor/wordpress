@@ -4,6 +4,7 @@
 
 	@include bp-max-width($medium) {
 		width: 50%;
+		height: 66px;
 		padding-right: 10px;
 	}
 
@@ -52,6 +53,7 @@
 }
 
 .product-grid-container .product-grid--item {
+	display: flex;
 	padding-left: 10px;
 	padding-right: 10px;
 
@@ -73,7 +75,6 @@
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	height: 100%;
 	padding: 10px 10px 16px 10px;
 	background: $grey;
 	text-align: center;
@@ -123,6 +124,14 @@
 	@include bp-max-width($small) {
 		@include font-size(14px);
 		margin-bottom: 6px;
+	}
+}
+
+.product-grid--category-title {
+	@include bp-max-width($small) {
+		@include font-size(18px);
+		hyphens: auto;
+		width: 100%;
 	}
 }
 

@@ -57,6 +57,13 @@ if ( $product->is_in_stock() ) : ?>
 
 		<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt btn__solid-navy"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
 
+		<div class="product-trust">
+			<p class="product-trust__shipping"><?php the_field('product_shipping_note', 'options'); ?></p>
+			<div class="product-trust__logos">
+				<img src="<?php echo get_template_directory_uri(); ?>/dist/images/payment-logos.svg" alt="Klarna, Mastercard, Visa" />
+			</div>
+		</div>
+
 		<?php
 			/**
 			 * @since 2.1.0.

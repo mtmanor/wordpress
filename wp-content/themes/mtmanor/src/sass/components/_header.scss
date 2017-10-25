@@ -1,19 +1,27 @@
 
 .message-bar {
 	@include font-size(14px);
-	padding: 12px;
+	padding: 6px;
 	background: $salmon;
 	color: $navy;
 	text-align: center;
+
+	@include bp-min-width($small) {
+		padding: 12px;
+	}
 }
 
 .header {
 	position: absolute;
-	top: 48px;
+	top: 36px;
 	left: 0;
 	right: 0;
 	z-index: 100;
 	background: $navy;
+
+	@include bp-min-width($small) {
+		top: 48px;
+	}
 
 	&.js-is-sticky {
 		position: fixed;

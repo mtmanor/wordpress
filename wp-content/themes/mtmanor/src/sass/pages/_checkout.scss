@@ -1,4 +1,66 @@
 
+.checkout-summary .woocommerce {
+	padding: 0;
+	border: 1px solid $grey;
+}
+
+.checkout-summary .woocommerce-info {
+	display: none;
+}
+
+#klarna-checkout-widget table {
+	table-layout: auto;
+	border-collapse: collapse;
+}
+
+#klarna-checkout-widget > div:last-child {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background: $pale-grey;
+}
+
+#klarna-checkout-widget th {
+	@include font-size(12px);
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid $grey;
+	text-transform: uppercase;
+}
+
+#klarna-checkout-widget th:last-child {
+	width: 80px;
+}
+
+#klarna-checkout-widget td,
+#klarna-checkout-widget th {
+	line-height: 1.125;
+
+	&:first-child {
+		padding-left: 20px;
+	}
+
+	&:last-child {
+		padding-right: 20px;
+	}
+}
+
+#klarna-checkout-widget td {
+	@include font-size(13px);
+}
+
+#klarna-checkout-cart td {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#klarna-checkout-widget .product-quantity label {
+	display: none;
+}
+
+#klarna-checkout-widget input[type=number] {
+	border: none;
+}
+
 .checkout label {
 	display: block;
 	margin-bottom: 4px;

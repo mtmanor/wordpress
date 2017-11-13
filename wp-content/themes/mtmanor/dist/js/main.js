@@ -114,7 +114,10 @@ jQuery(document).ready(function($) {
     })
   }
 
-  stickyHeader();
+  if(!$('body').hasClass('woocommerce-checkout')) {
+    stickyHeader();
+  }
+
   mobileNav();
   mobileSearch();
   couponToggle();

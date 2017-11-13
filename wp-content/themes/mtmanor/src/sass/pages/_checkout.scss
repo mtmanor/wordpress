@@ -1,4 +1,47 @@
 
+.woocommerce-checkout .message-bar,
+.woocommerce-checkout .main-nav,
+.woocommerce-checkout .header-search,
+.woocommerce-checkout .header-cart-link,
+.woocommerce-checkout .page-header,
+.woocommerce-checkout .bottom-content {
+	display: none;
+}
+
+.woocommerce-checkout .header {
+	position: relative;
+	top: auto;
+}
+
+.woocommerce-checkout .header .container {
+	height: 84px;
+}
+
+.woocommerce-checkout .header-logo {
+	@include vertical-center;
+	left: 20px;
+	width: auto;
+	height: 46px;
+
+	@include bp-min-width($large) {
+		height: 60px;
+		left: 0;
+	}
+}
+
+.woocommerce-checkout .icon-logo-mark {
+	margin-bottom: 0;
+	margin-right: 12px;
+}
+
+.woocommerce-checkout .main {
+	padding-top: $base;
+
+	@include bp-min-width($medium) {
+		padding-top: 48px;
+	}
+}
+
 .checkout-summary .woocommerce {
 	padding: 0;
 	border: 1px solid $grey;

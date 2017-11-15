@@ -32,7 +32,7 @@ ins {
   text-decoration: none;
 }
 
-.title__h1 {
+@mixin title__h1 {
   @include font-size(24px);
   font-family: $serif;
   font-weight: $weight-regular;
@@ -44,14 +44,22 @@ ins {
   }
 }
 
-.title__h2 {
+.title__h1 {
+  @include title__h1;
+}
+
+@mixin title__h2 {
   @include font-size(24px);
   font-family: $serif;
   font-weight: $weight-light;
   letter-spacing: 0.03em;
 }
 
-.title__h3 {
+.title__h2 {
+  @include title__h2;
+}
+
+@mixin title__h3 {
   font-weight: $weight-medium;
 
   @include bp-min-width($medium) {
@@ -59,7 +67,11 @@ ins {
   }
 }
 
-.title__h4 {
+.title__h3 {
+  @include title__h3;
+}
+
+@mixin title__h4 {
   font-weight: $weight-medium;
 
   @include bp-min-width($medium) {
@@ -67,7 +79,11 @@ ins {
   }
 }
 
-.title__h5 {
+.title__h4 {
+  @include title__h4;
+}
+
+@mixin title__h5 {
   font-weight: $weight-medium;
 
   @include bp-min-width($medium) {
@@ -75,13 +91,21 @@ ins {
   }
 }
 
-.section-title {
+.title__h5 {
+  @include title__h5;
+}
+
+@mixin section-title {
   margin-bottom: $base;
   text-align: center;
 
   @include bp-min-width($medium) {
     margin-bottom: $base*2;
   }
+}
+
+.section-title {
+  @include section-title;
 }
 
 .body-content h1,
@@ -112,7 +136,4 @@ ins {
 .body-content ol:not(:last-child),
 .body-content blockquote:not(:last-child) {
   margin-bottom: $base;
-}
-
-.body-content blockquote {
 }

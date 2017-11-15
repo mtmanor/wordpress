@@ -154,11 +154,27 @@
 	margin-bottom: $base;
 }
 
-.related-products {
-	width: 100%;
+.related-products,
+.upsells {
+	@include col-100;
+
+	@include bp-min-width($medium) {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
 }
 
-.related-products .product-grid--item {
+.upsells {
+	margin-bottom: $base*2;
+}
+
+.upsells > h2 {
+	@include title__h1;
+	@include section-title;
+}
+
+.related-products .product-grid--item,
+.upsells .product-grid--item {
 	@include bp-max-width($medium) {
 		width: 50%;
 		padding-left: 10px;

@@ -24,10 +24,14 @@
   }
 }
 
-.col-100 {
+@mixin col-100 {
   @include bp-min-width($medium) {
     width: 100%;
   }
+}
+
+.col-100 {
+  @include col-100;
 }
 
 .col-3-4 {
